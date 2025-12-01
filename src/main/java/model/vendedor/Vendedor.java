@@ -17,6 +17,14 @@ public class Vendedor {
         return vendedorInfo;
     }
 
+    public String getInfoNome() {
+        return this.vendedorInfo.getNome();
+    }
+
+    public String getInfoTelefone() {
+        return this.vendedorInfo.getTelefone();
+    }
+
     @Override
     public String toString() {
         return "Vendedor{" +
