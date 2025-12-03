@@ -1,6 +1,6 @@
 package model.vendedor;
 
-import dao.vendedor.ValidacaoIdVendedor;
+import dao.vendedordao.ValidacaoIdVendedor;
 import model.Id;
 
 public class IdVendedor extends Id {

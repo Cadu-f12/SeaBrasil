@@ -5,7 +5,7 @@ public class Vendedor {
     private VendedorInfo vendedorInfo;
 
     public Vendedor(IdVendedor id, VendedorInfo vendedorInfo) {
-
+        setIdVendedor(id);
         setVendedorInfo(vendedorInfo);
     }
 

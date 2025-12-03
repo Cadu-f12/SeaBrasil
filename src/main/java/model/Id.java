@@ -18,4 +18,11 @@ public abstract class Id {
     public int getId() {
         return this.id;
     }
+
+    @Override
+    public String toString() {
+        return "Id{" +
+                "id=" + id +
+                '}';
+    }
 }
