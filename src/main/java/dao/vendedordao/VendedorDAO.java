@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class VendedorDAO {
 
@@ -29,5 +30,36 @@ public class VendedorDAO {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Vendedor SelecionarVendedor(int id) {
+        IdVendedor idVendedor = new IdVendedor(id);
+        Vendedor vendedor = new Vendedor(idVendedor, null);
+
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
+
+        return pesquisarVendedor.obterVendedorPorId();
+    }
+
+    public ArrayList<Vendedor> ListarVendedores() {
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(null);
+        ArrayList<Vendedor> vendedores = new ArrayList<>();
+
+        try {
+            vendedores = pesquisarVendedor.listarVendedores();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return vendedores;
+    }
+
+    public boolean VerificarId(int id) {
+        IdVendedor idVendedor = new IdVendedor(id);
+        Vendedor vendedor = new Vendedor(idVendedor, null);
+
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
+
+        return pesquisarVendedor.existeId();
     }
 }
