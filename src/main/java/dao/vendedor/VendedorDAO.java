@@ -1,5 +1,6 @@
-package dao;
+package dao.vendedor;
 
+import model.vendedor.IdVendedor;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;
 import util.Conexao;
@@ -30,6 +31,7 @@ public class VendedorDAO {
 
     public Vendedor obterVendedorPorId(int id) {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
+        IdVendedor idVendedor = null;
         VendedorInfo vendedorInfo = null;
         Vendedor vendedor = null;
 
@@ -41,8 +43,9 @@ public class VendedorDAO {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
+                idVendedor = new IdVendedor(rs.getInt("id"));
                 vendedorInfo = new VendedorInfo(rs.getString("nome"), rs.getString("telefone"));
-                vendedor = new Vendedor(rs.getInt("id"), vendedorInfo);
+                vendedor = new Vendedor(idVendedor, vendedorInfo);
             }
 
             return vendedor;

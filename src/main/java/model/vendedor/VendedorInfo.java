@@ -5,16 +5,22 @@ public class VendedorInfo {
     private String telefone; // campo opcional
 
     public VendedorInfo(String nome, String telefone) {
-        this.nome = nome;
-        this.telefone = telefone;
+        setNome(nome);
+        setTelefone(telefone);
     }
 
-    public String getNome() {
+    protected String getNome() {
         return nome;
     }
+    protected void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public String getTelefone() {
+    protected String getTelefone() {
         return telefone;
+    }
+    protected void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Override

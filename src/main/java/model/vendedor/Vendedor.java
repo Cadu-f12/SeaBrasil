@@ -1,28 +1,40 @@
 package model.vendedor;
 
 public class Vendedor {
-    private int id;
+    private IdVendedor id;
     private VendedorInfo vendedorInfo;
 
-    public Vendedor(int id, VendedorInfo vendedorInfo) {
-        this.id = id;
-        this.vendedorInfo = vendedorInfo;
+    public Vendedor(IdVendedor id, VendedorInfo vendedorInfo) {
+
+        setVendedorInfo(vendedorInfo);
     }
 
     public int getId() {
-        return id;
+        return this.id.getId();
+    }
+    public void setIdVendedor(IdVendedor id) {
+        this.id = id;
     }
 
     public VendedorInfo getVendedorInfo() {
         return vendedorInfo;
     }
+    public void setVendedorInfo(VendedorInfo vendedorInfo) {
+        this.vendedorInfo = vendedorInfo;
+    }
 
     public String getInfoNome() {
         return this.vendedorInfo.getNome();
     }
+    public void ChangeNome(String nome) {
+        this.vendedorInfo.setNome(nome);
+    }
 
     public String getInfoTelefone() {
         return this.vendedorInfo.getTelefone();
+    }
+    public void ChangeTelefone(String telefone) {
+        vendedorInfo.setTelefone(telefone);
     }
 
     @Override

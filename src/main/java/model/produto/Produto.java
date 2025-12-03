@@ -6,21 +6,30 @@ public class Produto {
     private double preco;
 
     public Produto(int id, Classificacao classificacao, double preco) {
-        this.id = id;
-        this.classificacao = classificacao;
-        this.preco = preco;
+        setId(id);
+        setClassificacao(classificacao);
+        setPreco(preco);
     }
 
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Classificacao getClassificacao() {
         return classificacao;
     }
+    public void setClassificacao(Classificacao classificacao) {
+        this.classificacao = classificacao;
+    }
 
     public double getPreco() {
         return preco;
+    }
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     @Override

@@ -12,31 +12,46 @@ public class Venda {
     private Pagamento pagamento;
 
     public Venda(int id, ItemVenda itemVenda, Vendedor vendedor, LocalDate data, Pagamento pagamento) {
-        this.id = id;
-        this.itemVenda = itemVenda;
-        this.vendedor = vendedor;
-        this.data = data;
-        this.pagamento = pagamento;
+        setId(id);
+        setItemVenda(itemVenda);
+        setVendedor(vendedor);
+        setData(data);
+        setPagamento(pagamento);
     }
 
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public ItemVenda getItemVenda() {
         return itemVenda;
+    }
+    public void setItemVenda(ItemVenda itemVenda) {
+        this.itemVenda = itemVenda;
     }
 
     public Vendedor getVendedor() {
         return vendedor;
     }
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
 
     public LocalDate getData() {
         return data;
     }
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
 
     public Pagamento getPagamento() {
         return pagamento;
+    }
+    public void setPagamento(Pagamento pagamento) {
+        this.pagamento = pagamento;
     }
 
     @Override
