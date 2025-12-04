@@ -1,35 +1,50 @@
 package model.produto;
 
-public class Produto {
-    private int id;
-    private Classificacao classificacao;
-    private double preco;
+import model.Id;
 
-    public Produto(int id, Classificacao classificacao, double preco) {
-        setId(id);
-        setClassificacao(classificacao);
-        setPreco(preco);
+import java.math.BigDecimal;
+
+public class Produto {
+    private final Id id;
+    private final Classificacao classificacao;
+    private final Preco preco;
+
+    public Produto(Id id, Classificacao classificacao, Preco preco) {
+        if (!(id instanceof ProdutoId)) {
+            System.err.println("Exceção disparado de: Vendedor");
+            throw new IllegalArgumentException("Id inválido: a entidade Vendedor aceita apenas VendedorId");
+        }
+        this.id = id;
+        this.classificacao = classificacao;
+        this.preco = preco;
     }
 
     public int getId() {
-        return id;
+        return this.id.getId();
     }
     public void setId(int id) {
-        this.id = id;
+        this.id.setId(id);
     }
 
-    public Classificacao getClassificacao() {
-        return classificacao;
+    public Categoria getClassificacaoCategoria() {
+        return this.classificacao.getCategoria();
     }
-    public void setClassificacao(Classificacao classificacao) {
-        this.classificacao = classificacao;
+    public void ChangeClassificacaoCategoria(Categoria categoria) {
+        this.classificacao.setCategoria(categoria);
     }
 
-    public double getPreco() {
-        return preco;
+    public String getClassificacaoNome() {
+        return this.classificacao.getNome();
     }
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public void ChangeClassificacaoNome(String nome) {
+        classificacao.setNome(nome);
+    }
+
+    public BigDecimal getPreco() {
+        return preco.getPreco();
+    }
+    public void ChangePreco(BigDecimal valor) {
+        preco.setPreco(valor);
     }
 
     @Override

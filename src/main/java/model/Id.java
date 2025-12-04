@@ -1,17 +1,20 @@
 package model;
 
 public abstract class Id {
-    private final int id;
+    private int id;
 
     public Id(int id) {
-        validarTamanho(id);
-        validarUnicidade(id);
-
-        this.id = id;
+        setId(id);
     }
 
     public int getId() {
         return id;
+    }
+    public void setId(int id) {
+        validarTamanho(id);
+        validarUnicidade(id);
+
+        this.id = id;
     }
 
     private void validarTamanho(int id) {
@@ -20,7 +23,6 @@ public abstract class Id {
             throw new IllegalArgumentException("id_vendedor inválido: valor <= 0 ou valor > 99999 detectado");
         }
     }
-
     public abstract void validarUnicidade(int id);
 
     @Override

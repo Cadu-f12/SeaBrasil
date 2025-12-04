@@ -9,17 +9,17 @@ public class Classificacao {
         setNome(nome);
     }
 
-    public Categoria getCategoria() {
+    protected Categoria getCategoria() {
         return categoria;
     }
-    public void setCategoria(Categoria categoria) {
+    protected void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
-    public String getNome() {
+    protected String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
+    protected void setNome(String nome) {
         this.nome = nome;
     }
 

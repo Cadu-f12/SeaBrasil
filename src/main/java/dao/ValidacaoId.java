@@ -22,4 +22,19 @@ public class ValidacaoId {
             throw new RuntimeException(e);
         }
     }
+
+    public boolean existeIdProduto(int id) {
+        String sql = "SELECT * FROM produto WHERE id = ?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            return rs.next();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
