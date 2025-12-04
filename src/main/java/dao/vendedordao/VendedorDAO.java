@@ -12,54 +12,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class VendedorDAO {
+    private final Vendedor vendedor;
 
-    public void AdicionarRegistro(int id, String nome, String telefone) {
-        Vendedor vendedor = null;
-
-        try {
-            IdVendedor idVendedor = new IdVendedor(id);
-            VendedorInfo VendedorInfo = new VendedorInfo(nome, telefone);
-            vendedor = new Vendedor(idVendedor, VendedorInfo);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
-            CriarVendedor criar = new CriarVendedor(vendedor);
-            criar.addVendedor();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public VendedorDAO(Vendedor vendedor) {
+        this.vendedor = vendedor;
     }
 
-    public Vendedor SelecionarVendedor(int id) {
-        IdVendedor idVendedor = new IdVendedor(id);
-        Vendedor vendedor = new Vendedor(idVendedor, null);
+    public void AdicionarRegistro() {
+        CriarVendedor criarVendedor = new CriarVendedor(vendedor);
+        criarVendedor.addVendedor();
+    }
 
+    public Vendedor SelecionarVendedor() {
         PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
-
         return pesquisarVendedor.obterVendedorPorId();
     }
 
     public ArrayList<Vendedor> ListarVendedores() {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(null);
-        ArrayList<Vendedor> vendedores = new ArrayList<>();
-
-        try {
-            vendedores = pesquisarVendedor.listarVendedores();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        return vendedores;
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
+        return pesquisarVendedor.listarVendedores();
     }
 
     public boolean VerificarId(int id) {
-        IdVendedor idVendedor = new IdVendedor(id);
-        Vendedor vendedor = new Vendedor(idVendedor, null);
-
         PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
-
         return pesquisarVendedor.existeId();
     }
 }
