@@ -1,6 +1,6 @@
 package dao.vendedordao;
 
-import model.vendedor.IdVendedor;
+import model.vendedor.VendedorId;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;
 import util.Conexao;
@@ -20,7 +20,7 @@ public class PesquisarVendedor {
 
     public Vendedor obterVendedorPorId() {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
-        IdVendedor novoIdVendedor = null;
+        VendedorId novoVendedorId = null;
         VendedorInfo novoVendedorInfo = null;
         Vendedor novoVendedor = null;
 
@@ -31,9 +31,9 @@ public class PesquisarVendedor {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                novoIdVendedor = new IdVendedor(rs.getInt("id"));
+                novoVendedorId = new VendedorId(rs.getInt("id"));
                 novoVendedorInfo = new VendedorInfo(rs.getString("nome"), rs.getString("telefone"));
-                novoVendedor = new Vendedor(novoIdVendedor, novoVendedorInfo);
+                novoVendedor = new Vendedor(novoVendedorId, novoVendedorInfo);
             }
 
             rs.close();
@@ -52,9 +52,9 @@ public class PesquisarVendedor {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                IdVendedor idVendedor = new IdVendedor(rs.getInt("id"));
+                VendedorId vendedorId = new VendedorId(rs.getInt("id"));
                 VendedorInfo vendedorInfo = new VendedorInfo(rs.getString("nome"), rs.getString("telefone"));
-                Vendedor vendedor = new Vendedor(idVendedor, vendedorInfo);
+                Vendedor vendedor = new Vendedor(vendedorId, vendedorInfo);
                 vendedores.add(vendedor);
             }
 
