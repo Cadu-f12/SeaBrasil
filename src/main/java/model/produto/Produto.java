@@ -11,39 +11,40 @@ public class Produto {
 
     public Produto(Id id, Classificacao classificacao, Preco preco) {
         if (!(id instanceof ProdutoId)) {
-            System.err.println("Exceção disparado de: Vendedor");
+            System.err.println("Exceção disparado de: Produto");
             throw new IllegalArgumentException("Id inválido: a entidade Vendedor aceita apenas VendedorId");
         }
+
         this.id = id;
         this.classificacao = classificacao;
         this.preco = preco;
     }
 
-    public int getId() {
+    public int captureId() {
         return this.id.getId();
     }
-    public void setId(int id) {
+    public void changeId(int id) {
         this.id.setId(id);
     }
 
-    public Categoria getClassificacaoCategoria() {
+    public Categoria captureClassificacaoCategoria() {
         return this.classificacao.getCategoria();
     }
-    public void ChangeClassificacaoCategoria(Categoria categoria) {
+    public void changeClassificacaoCategoria(Categoria categoria) {
         this.classificacao.setCategoria(categoria);
     }
 
-    public String getClassificacaoNome() {
+    public String captureClassificacaoNome() {
         return this.classificacao.getNome();
     }
-    public void ChangeClassificacaoNome(String nome) {
+    public void changeClassificacaoNome(String nome) {
         classificacao.setNome(nome);
     }
 
-    public BigDecimal getPreco() {
+    public BigDecimal capturePreco() {
         return preco.getPreco();
     }
-    public void ChangePreco(BigDecimal valor) {
+    public void changePreco(BigDecimal valor) {
         preco.setPreco(valor);
     }
 
