@@ -1,26 +1,22 @@
 package model.vendedor;
 
+import model.Id;
+
 public class Vendedor {
-    private IdVendedor id;
+    private Id id;
     private VendedorInfo vendedorInfo;
 
-    public Vendedor(IdVendedor id, VendedorInfo vendedorInfo) {
-        setIdVendedor(id);
-        setVendedorInfo(vendedorInfo);
+    public Vendedor(Id id, VendedorInfo vendedorInfo) {
+        this.id = id;
+        this.vendedorInfo = vendedorInfo;
     }
 
-    public int getId() {
+    public int getIdVendedor() {
         return this.id.getId();
-    }
-    public void setIdVendedor(IdVendedor id) {
-        this.id = id;
     }
 
     public VendedorInfo getVendedorInfo() {
         return vendedorInfo;
-    }
-    public void setVendedorInfo(VendedorInfo vendedorInfo) {
-        this.vendedorInfo = vendedorInfo;
     }
 
     public String getInfoNome() {

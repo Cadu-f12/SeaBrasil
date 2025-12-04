@@ -19,7 +19,7 @@ public class CriarVendedor {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.getId());
+            pstmt.setInt(1, vendedor.getIdVendedor());
             pstmt.setString(2, vendedor.getInfoNome());
             pstmt.setString(3, vendedor.getInfoTelefone());
 

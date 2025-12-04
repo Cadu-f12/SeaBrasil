@@ -26,7 +26,7 @@ public class PesquisarVendedor {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.getId());
+            pstmt.setInt(1, vendedor.getIdVendedor());
 
             ResultSet rs = pstmt.executeQuery();
 
@@ -69,7 +69,7 @@ public class PesquisarVendedor {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.getId());
+            pstmt.setInt(1, vendedor.getIdVendedor());
 
             ResultSet rs = pstmt.executeQuery();
 
