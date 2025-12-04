@@ -17,7 +17,9 @@ public class ValidacaoId {
 
             ResultSet rs = pstmt.executeQuery();
 
-            return rs.next();
+            boolean value = rs.next();
+            rs.close();
+            return value;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +34,9 @@ public class ValidacaoId {
 
             ResultSet rs = pstmt.executeQuery();
 
-            return rs.next();
+            boolean value = rs.next();
+            rs.close();
+            return value;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
