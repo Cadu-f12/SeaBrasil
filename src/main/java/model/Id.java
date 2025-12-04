@@ -16,6 +16,7 @@ public abstract class Id {
 
     private void validarTamanho(int id) {
         if (id < 1 || id > 99999) {
+            System.err.println("Exceção disparado de: Id,validarTamanho");
             throw new IllegalArgumentException("id_vendedor inválido: valor <= 0 ou valor > 99999 detectado");
         }
     }
