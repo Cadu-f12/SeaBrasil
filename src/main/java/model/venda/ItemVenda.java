@@ -2,36 +2,55 @@ package model.venda;
 
 import model.produto.Produto;
 
+import java.math.BigDecimal;
+
 public class ItemVenda {
     private Produto produto;
-    private int quantidade;
-    private double total;
+    private BigDecimal quantidade;
+    private Total total;
 
-    public ItemVenda(Produto produto, int quantidade, double total) {
+    public ItemVenda(Produto produto, BigDecimal quantidade) {
         setProduto(produto);
         setQuantidade(quantidade);
-        setTotal(total);
+        this.total = new Total(produto, quantidade);
     }
 
-    public Produto getProduto() {
+    protected Produto getProduto() {
         return produto;
     }
-    public void setProduto(Produto produto) {
+    protected void setProduto(Produto produto) {
+        if (produto == null) {
+            System.err.println("Exceção disparada de: ItemVenda.setProduto");;
+            throw new IllegalArgumentException("produto inválido: valor nulo detectado");
+        }
+
         this.produto = produto;
     }
 
-    public int getQuantidade() {
+    protected BigDecimal getQuantidade() {
         return quantidade;
     }
-    public void setQuantidade(int quantidade) {
+    protected void setQuantidade(BigDecimal quantidade) {
+        if (quantidade == null) {
+            System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
+            throw new IllegalArgumentException("quantidade inválida: valor nulo detectado");
+        }
+        // quantidade < 1
+        if (quantidade.compareTo(BigDecimal.ONE) < 0) {
+            System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
+            throw new IllegalArgumentException("quantidade inválida: valor menor que 1 detectado");
+        }
+        // quantidade > 99
+        if (quantidade.compareTo(new BigDecimal("99")) > 0) {
+            System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
+            throw new IllegalArgumentException("quantidade inválida: valor maior que 99 detectado");
+        }
+
         this.quantidade = quantidade;
     }
 
-    public double getTotal() {
-        return total;
-    }
-    public void setTotal(double total) {
-        this.total = total;
+    protected BigDecimal captureTotal() {
+        return this.total.getSoma();
     }
 
     @Override

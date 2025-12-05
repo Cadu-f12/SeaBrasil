@@ -20,7 +20,7 @@ public class Venda {
         }
 
         this.id = id;
-        setItemVenda(itemVenda);
+        this.itemVenda = itemVenda;
         setVendedor(vendedor);
         setData(data);
         setPagamento(pagamento);
@@ -31,13 +31,6 @@ public class Venda {
     }
     public void changeId(int id) {
         this.id.setId(id);
-    }
-
-    public ItemVenda getItemVenda() {
-        return itemVenda;
-    }
-    public void setItemVenda(ItemVenda itemVenda) {
-        this.itemVenda = itemVenda;
     }
 
     public Vendedor getVendedor() {
