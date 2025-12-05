@@ -41,4 +41,21 @@ public class ValidacaoId {
             throw new RuntimeException(e);
         }
     }
+
+    public boolean existeIdVenda(int id) {
+        String sql = "SELECT * FROM venda WHERE id = ?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            boolean value = rs.next();
+            rs.close();
+            return value;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

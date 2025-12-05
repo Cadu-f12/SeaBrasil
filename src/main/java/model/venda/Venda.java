@@ -1,29 +1,36 @@
 package model.venda;
 
+import model.Id;
+import model.produto.ProdutoId;
 import model.vendedor.Vendedor;
 
 import java.time.LocalDate;
 
 public class Venda {
-    private int id;
+    private Id id;
     private ItemVenda itemVenda;
     private Vendedor vendedor;
     private LocalDate data;
     private Pagamento pagamento;
 
-    public Venda(int id, ItemVenda itemVenda, Vendedor vendedor, LocalDate data, Pagamento pagamento) {
-        setId(id);
+    public Venda(Id id, ItemVenda itemVenda, Vendedor vendedor, LocalDate data, Pagamento pagamento) {
+        if (!(id instanceof VendaId)) {
+            System.err.println("Exceção disparada de: Venda");
+            throw new IllegalArgumentException("Id inválido: a entidade Venda aceita apenas VendaId");
+        }
+
+        this.id = id;
         setItemVenda(itemVenda);
         setVendedor(vendedor);
         setData(data);
         setPagamento(pagamento);
     }
 
-    public int getId() {
-        return id;
+    public int captureId() {
+        return this.id.getId();
     }
-    public void setId(int id) {
-        this.id = id;
+    public void changeId(int id) {
+        this.id.setId(id);
     }
 
     public ItemVenda getItemVenda() {

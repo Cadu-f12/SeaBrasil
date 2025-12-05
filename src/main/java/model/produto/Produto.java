@@ -12,7 +12,7 @@ public class Produto {
     public Produto(Id id, Classificacao classificacao, Preco preco) {
         if (!(id instanceof ProdutoId)) {
             System.err.println("Exceção disparado de: Produto");
-            throw new IllegalArgumentException("Id inválido: a entidade Vendedor aceita apenas VendedorId");
+            throw new IllegalArgumentException("Id inválido: a entidade Produto aceita apenas ProdutoId");
         }
 
         this.id = id;
