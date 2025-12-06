@@ -30,4 +30,11 @@ public class Quantidade {
 
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "Quantidade{" +
+                "quantidade=" + quantidade +
+                '}';
+    }
 }

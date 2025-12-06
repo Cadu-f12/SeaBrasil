@@ -8,13 +8,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Venda {
-    private Id id;
-    private ItemVenda itemVenda;
-    private Vendedor vendedor;
-    private LocalDate data;
-    private Pagamento pagamento;
+    private final Id id;
+    private final ItemVenda itemVenda;
+    private final PagamentoResponsavel pagResponsavel;
 
-    public Venda(Id id, ItemVenda itemVenda, Vendedor vendedor, LocalDate data, Pagamento pagamento) {
+    public Venda(Id id, ItemVenda itemVenda, PagamentoResponsavel pagResponsavel) {
         if (!(id instanceof VendaId)) {
             System.err.println("Exceção disparada de: Venda");
             throw new IllegalArgumentException("Id inválido: a entidade Venda aceita apenas VendaId");
@@ -22,9 +20,7 @@ public class Venda {
 
         this.id = id;
         this.itemVenda = itemVenda;
-        setVendedor(vendedor);
-        setData(data);
-        setPagamento(pagamento);
+        this.pagResponsavel = pagResponsavel;
     }
 
     public int captureId() {
@@ -42,24 +38,15 @@ public class Venda {
         return this.itemVenda.captureTotal();
     }
 
-    public Vendedor getVendedor() {
-        return vendedor;
+    /* Dados do PagamentoResponsavel */
+    public int captureIdVendedor() {
+        return this.pagResponsavel.captureVendedorId();
     }
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
+    public Pagamento capturePgResponsavelPagamento() {
+        return this.pagResponsavel.capturePagamento();
     }
-    public LocalDate getData() {
-        return data;
-    }
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public Pagamento getPagamento() {
-        return pagamento;
-    }
-    public void setPagamento(Pagamento pagamento) {
-        this.pagamento = pagamento;
+    public LocalDate captureDataVenda() {
+        return this.pagResponsavel.captureData();
     }
 
     @Override
@@ -67,9 +54,7 @@ public class Venda {
         return "Venda{" +
                 "id=" + id +
                 ", itemVenda=" + itemVenda +
-                ", vendedor=" + vendedor +
-                ", data=" + data +
-                ", pagamento=" + pagamento +
+                ", pagResponsavel=" + pagResponsavel +
                 '}';
     }
 }
