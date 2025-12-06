@@ -4,6 +4,7 @@ import model.Id;
 import model.produto.ProdutoId;
 import model.vendedor.Vendedor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Venda {
@@ -29,8 +30,16 @@ public class Venda {
     public int captureId() {
         return this.id.getId();
     }
-    public void changeId(int id) {
-        this.id.setId(id);
+
+    /* Dados do ItemVenda */
+    public int captureIdProduto() {
+        return this.itemVenda.captureProdutoId();
+    }
+    public BigDecimal captureItemVendaQuantidade() {
+        return this.itemVenda.captureQuantidade();
+    }
+    public BigDecimal captureItemVendaTotal() {
+        return this.itemVenda.captureTotal();
     }
 
     public Vendedor getVendedor() {
@@ -39,7 +48,6 @@ public class Venda {
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
-
     public LocalDate getData() {
         return data;
     }
