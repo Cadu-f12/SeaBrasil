@@ -1,5 +1,7 @@
 package dao.vendedordao;
 
+import dao.ValidacaoId;
+import model.Id;
 import model.vendedor.VendedorId;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;
@@ -11,33 +13,32 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class PesquisarVendedor {
-    Vendedor vendedor;
+protected class PesquisarVendedor {
+    private final int idVendedor;
+    private ValidacaoId validacaoId;
 
-    public PesquisarVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
+    public PesquisarVendedor(int id) {
+        existeId(id);
+        this.idVendedor = id;
     }
 
     public Vendedor obterVendedorPorId() {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
-        VendedorId novoVendedorId = null;
-        VendedorInfo novoVendedorInfo = null;
         Vendedor novoVendedor = null;
 
         try (Connection conn = Conexao.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.getIdVendedor());
-
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, this.idVendedor);
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                novoVendedorId = new VendedorId(rs.getInt("id"));
-                novoVendedorInfo = new VendedorInfo(rs.getString("nome"), rs.getString("telefone"));
-                novoVendedor = new Vendedor(novoVendedorId, novoVendedorInfo);
+                Id id = new VendedorId(rs.getInt("id"));
+                VendedorInfo vendedorInfo = new VendedorInfo(rs.getString("nome"), rs.getString("telefone"));
+                novoVendedor = new Vendedor(id, vendedorInfo);
             }
 
             rs.close();
-            return vendedor;
+            return novoVendedor;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -64,18 +65,10 @@ public class PesquisarVendedor {
         }
     }
 
-    public boolean existeId() {
-        String sql = "SELECT * FROM vendedor WHERE id = ?";
-
-        try (Connection conn = Conexao.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.getIdVendedor());
-
-            ResultSet rs = pstmt.executeQuery();
-
-            return rs.next();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    private void existeId(int id) {
+        boolean flag = validacaoId.existeIdVendedor(id);
+        if (!flag) {
+            throw new RuntimeException("Vendedor não encontrado: o ID informado não existe no sistema.");
         }
     }
 }

@@ -16,7 +16,7 @@ public class Vendedor {
         this.vendedorInfo = vendedorInfo;
     }
 
-    public int captureVendedor() {
+    public int captureVendedorId() {
         return this.id.getId();
     }
 

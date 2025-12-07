@@ -5,29 +5,30 @@ import model.vendedor.Vendedor;
 import java.util.ArrayList;
 
 public class VendedorDAO {
-    private final Vendedor vendedor;
+    private int id;
+    private Vendedor vendedor;
 
+    public VendedorDAO(int id, Vendedor vendedor) {
+        this.id = id;
+        this.vendedor = vendedor;
+    }
     public VendedorDAO(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
-
-    public void AdicionarRegistro() {
-        CriarVendedor criarVendedor = new CriarVendedor(vendedor);
-        criarVendedor.addVendedor();
+    public VendedorDAO(int id) {
+        this.id = id;
     }
 
-    public Vendedor SelecionarVendedor() {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
+    /* Métodos de pesquisa */
+    public Vendedor pesquisaPorId() {
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
         return pesquisarVendedor.obterVendedorPorId();
     }
-
-    public ArrayList<Vendedor> ListarVendedores() {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
+    public ArrayList<Vendedor> listarVendedores() {
+        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
         return pesquisarVendedor.listarVendedores();
     }
 
-    public boolean VerificarId(int id) {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(vendedor);
-        return pesquisarVendedor.existeId();
-    }
+
+
 }

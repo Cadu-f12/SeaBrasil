@@ -14,7 +14,7 @@ public class PagamentoResponsavel {
     }
 
     public int captureVendedorId() {
-        return this.vendedor.getIdVendedor();
+        return this.vendedor.captureVendedorId();
     }
 
     public Pagamento capturePagamento() {
