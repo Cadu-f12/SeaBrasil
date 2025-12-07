@@ -3,8 +3,8 @@ package model.vendedor;
 import model.Id;
 
 public class Vendedor {
-    private Id id;
-    private VendedorInfo vendedorInfo;
+    private final Id id;
+    private final VendedorInfo vendedorInfo;
 
     public Vendedor(Id id, VendedorInfo vendedorInfo) {
         if (!(id instanceof VendedorId)) {
@@ -16,26 +16,16 @@ public class Vendedor {
         this.vendedorInfo = vendedorInfo;
     }
 
-    public int getIdVendedor() {
+    public int captureVendedor() {
         return this.id.getId();
     }
 
-    public VendedorInfo getVendedorInfo() {
-        return vendedorInfo;
-    }
-
-    public String getInfoNome() {
+    public String captureNome() {
         return this.vendedorInfo.getNome();
     }
-    public void ChangeNome(String nome) {
-        this.vendedorInfo.setNome(nome);
-    }
 
-    public String getInfoTelefone() {
+    public String captureTelefone() {
         return this.vendedorInfo.getTelefone();
-    }
-    public void ChangeTelefone(String telefone) {
-        vendedorInfo.setTelefone(telefone);
     }
 
     @Override
