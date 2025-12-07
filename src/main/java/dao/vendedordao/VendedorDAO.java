@@ -39,4 +39,11 @@ public class VendedorDAO {
         criarVendedor.addVendedorComNome();
     }
 
+    /* Métodos de atualização */
+
+    /* Métodos de remoção */
+    public void removerComId() {
+        DeletarVendedor deletarVendedor = new DeletarVendedor(vendedor);
+        deletarVendedor.deletarVendedorPorId();
+    }
 }
