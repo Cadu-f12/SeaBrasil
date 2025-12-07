@@ -24,11 +24,19 @@ public class VendedorDAO {
         PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
         return pesquisarVendedor.obterVendedorPorId();
     }
-    public ArrayList<Vendedor> listarVendedores() {
+    public ArrayList<Vendedor> listar() {
         PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
         return pesquisarVendedor.listarVendedores();
     }
 
-
+    /* Métodos de criação */
+    public void criarComId() {
+        CriarVendedor criarVendedor = new CriarVendedor(vendedor);
+        criarVendedor.addVendedorComId();
+    }
+    public void criarComNome() {
+        CriarVendedor criarVendedor  = new CriarVendedor(vendedor);
+        criarVendedor.addVendedorComNome();
+    }
 
 }

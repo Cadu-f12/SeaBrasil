@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-protected class PesquisarVendedor {
+public class PesquisarVendedor {
     private final int idVendedor;
     private ValidacaoId validacaoId;
 
