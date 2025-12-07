@@ -7,22 +7,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class DeletarVendedor {
-    Vendedor vendedor;
 
-    public DeletarVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-
-    public void deletarVendedorPorId() {
+    public void deletarVendedorPorId(int id) {
         String sql = "DELETE FROM vendedor WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.captureVendedorId());
+            pstmt.setInt(1, id);
 
             pstmt.executeUpdate();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
 }

@@ -5,45 +5,40 @@ import model.vendedor.Vendedor;
 import java.util.ArrayList;
 
 public class VendedorDAO {
-    private int id;
-    private Vendedor vendedor;
+    private final CriarVendedor criarVendedor;
+    private final PesquisarVendedor pesquisarVendedor;
+    private final AtualizarVendedor atualizarVendedor;
+    private final DeletarVendedor deletarVendedor;
 
-    public VendedorDAO(int id, Vendedor vendedor) {
-        this.id = id;
-        this.vendedor = vendedor;
-    }
-    public VendedorDAO(Vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-    public VendedorDAO(int id) {
-        this.id = id;
+
+    public VendedorDAO() {
+        this.criarVendedor = new CriarVendedor();
+        this.pesquisarVendedor = new PesquisarVendedor();
+        this.atualizarVendedor = new AtualizarVendedor();
+        this.deletarVendedor = new DeletarVendedor();
+
     }
 
     /* Métodos de pesquisa */
-    public Vendedor pesquisaPorId() {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
-        return pesquisarVendedor.obterVendedorPorId();
+    public Vendedor pesquisaPorId(int id) {
+        return pesquisarVendedor.obterVendedorPorId(id);
     }
     public ArrayList<Vendedor> listar() {
-        PesquisarVendedor pesquisarVendedor = new PesquisarVendedor(this.id);
         return pesquisarVendedor.listarVendedores();
     }
 
     /* Métodos de criação */
-    public void criarComId() {
-        CriarVendedor criarVendedor = new CriarVendedor(vendedor);
-        criarVendedor.addVendedorComId();
+    public void criarComId(Vendedor vendedorComId) {
+        criarVendedor.addVendedorComId(vendedorComId);
     }
-    public void criarComNome() {
-        CriarVendedor criarVendedor  = new CriarVendedor(vendedor);
-        criarVendedor.addVendedorComNome();
+    public void criarComNome(Vendedor vendedorComNome) {
+        criarVendedor.addVendedorComNome(vendedorComNome);
     }
 
     /* Métodos de atualização */
 
     /* Métodos de remoção */
-    public void removerComId() {
-        DeletarVendedor deletarVendedor = new DeletarVendedor(vendedor);
-        deletarVendedor.deletarVendedorPorId();
+    public void removerComId(int id) {
+        deletarVendedor.deletarVendedorPorId(id);
     }
 }

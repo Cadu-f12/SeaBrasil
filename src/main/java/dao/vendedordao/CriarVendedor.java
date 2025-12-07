@@ -8,13 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class CriarVendedor {
-    Vendedor vendedor;
 
-    public CriarVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
-    }
-
-    public void addVendedorComId() {
+    public void addVendedorComId(Vendedor vendedor) {
         String sql = "INSERT INTO vendedor (id, nome, telefone) VALUES (?, ?, ?)";
 
         try (Connection conn = Conexao.getConnection();
@@ -29,7 +24,7 @@ public class CriarVendedor {
         }
     }
 
-    public void addVendedorComNome() {
+    public void addVendedorComNome(Vendedor vendedor) {
         String sql = "INSERT INTO vendedor (nome, telefone) VALUES (?, ?)";
 
         try (Connection conn = Conexao.getConnection();

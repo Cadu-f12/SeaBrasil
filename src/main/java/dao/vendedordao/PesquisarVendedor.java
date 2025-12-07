@@ -14,21 +14,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class PesquisarVendedor {
-    private final int idVendedor;
-    private ValidacaoId validacaoId;
+    private final ValidacaoId validacaoId;
 
-    public PesquisarVendedor(int id) {
-        existeId(id);
-        this.idVendedor = id;
+    public PesquisarVendedor() {
+        this.validacaoId = new ValidacaoId();
     }
 
-    public Vendedor obterVendedorPorId() {
+    public Vendedor obterVendedorPorId(int idVendedor) {
+        existeId(idVendedor);
         String sql = "SELECT * FROM vendedor WHERE id = ?";
         Vendedor novoVendedor = null;
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, this.idVendedor);
+            pstmt.setInt(1, idVendedor);
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
