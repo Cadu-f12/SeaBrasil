@@ -5,18 +5,17 @@ import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-public class CriarVendedor {
+public class Criacoes {
 
-    public void addVendedorComId(Vendedor vendedor) {
+    public void addVendedorComId(Vendedor vendedorComTudo) {
         String sql = "INSERT INTO vendedor (id, nome, telefone) VALUES (?, ?, ?)";
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedor.captureVendedorId());
-            pstmt.setString(2, vendedor.captureNome());
-            pstmt.setString(3, vendedor.captureTelefone());
+            pstmt.setInt(1, vendedorComTudo.captureVendedorId());
+            pstmt.setString(2, vendedorComTudo.captureNome());
+            pstmt.setString(3, vendedorComTudo.captureTelefone());
 
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -24,13 +23,13 @@ public class CriarVendedor {
         }
     }
 
-    public void addVendedorComNome(Vendedor vendedor) {
+    public void addVendedorComNome(Vendedor vendedorComNome) {
         String sql = "INSERT INTO vendedor (nome, telefone) VALUES (?, ?)";
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, vendedor.captureNome());
-            pstmt.setString(2, vendedor.captureTelefone());
+            pstmt.setString(1, vendedorComNome.captureNome());
+            pstmt.setString(2, vendedorComNome.captureTelefone());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

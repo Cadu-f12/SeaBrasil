@@ -5,40 +5,39 @@ import model.vendedor.Vendedor;
 import java.util.ArrayList;
 
 public class VendedorDAO {
-    private final CriarVendedor criarVendedor;
-    private final PesquisarVendedor pesquisarVendedor;
-    private final AtualizarVendedor atualizarVendedor;
-    private final DeletarVendedor deletarVendedor;
+    private final Criacoes criacoes;
+    private final Pesquisas pesquisas;
+    private final Atualizacoes atualizacoes;
+    private final Remocoes remocoes;
 
 
     public VendedorDAO() {
-        this.criarVendedor = new CriarVendedor();
-        this.pesquisarVendedor = new PesquisarVendedor();
-        this.atualizarVendedor = new AtualizarVendedor();
-        this.deletarVendedor = new DeletarVendedor();
-
+        this.criacoes = new Criacoes();
+        this.pesquisas = new Pesquisas();
+        this.atualizacoes = new Atualizacoes();
+        this.remocoes = new Remocoes();
     }
 
     /* Métodos de pesquisa */
-    public Vendedor pesquisaPorId(int id) {
-        return pesquisarVendedor.obterVendedorPorId(id);
+    public Vendedor pesquisarPorId(Vendedor vendedorApenasId) {
+        return pesquisas.obterVendedorPorId(vendedorApenasId);
     }
     public ArrayList<Vendedor> listar() {
-        return pesquisarVendedor.listarVendedores();
+        return pesquisas.listarVendedores();
     }
 
     /* Métodos de criação */
     public void criarComId(Vendedor vendedorComId) {
-        criarVendedor.addVendedorComId(vendedorComId);
+        criacoes.addVendedorComId(vendedorComId);
     }
     public void criarComNome(Vendedor vendedorComNome) {
-        criarVendedor.addVendedorComNome(vendedorComNome);
+        criacoes.addVendedorComNome(vendedorComNome);
     }
 
     /* Métodos de atualização */
 
     /* Métodos de remoção */
-    public void removerComId(int id) {
-        deletarVendedor.deletarVendedorPorId(id);
+    public void removerComId(Vendedor vendedorApenasId) {
+        remocoes.deletarVendedorPorId(vendedorApenasId);
     }
 }

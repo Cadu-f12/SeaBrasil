@@ -6,9 +6,9 @@ import util.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class AtualizarVendedor {
+public class Atualizacoes {
 
-    public void atualizarVendedor(Vendedor novoVendedor) {
+    public void atualizarDados(Vendedor novoVendedor) {
         String sql = "UPDATE vendedor SET id = ?, nome = ?, telefone = ? WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();
