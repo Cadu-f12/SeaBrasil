@@ -1,8 +1,6 @@
 package model.venda;
 
 import model.Id;
-import model.produto.ProdutoId;
-import model.vendedor.Vendedor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,11 +11,6 @@ public class Venda {
     private final PagamentoResponsavel pagResponsavel;
 
     public Venda(Id id, ItemVenda itemVenda, PagamentoResponsavel pagResponsavel) {
-        if (!(id instanceof VendaId)) {
-            System.err.println("Exceção disparada de: Venda");
-            throw new IllegalArgumentException("Id inválido: a entidade Venda aceita apenas VendaId");
-        }
-
         this.id = id;
         this.itemVenda = itemVenda;
         this.pagResponsavel = pagResponsavel;

@@ -7,11 +7,6 @@ public class Vendedor {
     private final VendedorInfo vendedorInfo;
 
     public Vendedor(Id id, VendedorInfo vendedorInfo) {
-        if (!(id instanceof VendedorId)) {
-            System.err.println("Exceção disparado de: Vendedor");
-            throw new IllegalArgumentException("Id inválido: a entidade Vendedor aceita apenas VendedorId");
-        }
-
         this.id = id;
         this.vendedorInfo = vendedorInfo;
     }

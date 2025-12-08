@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Id {
+public class Id {
     private int id;
 
     public Id(int id) {
@@ -12,7 +12,6 @@ public abstract class Id {
     }
     public void setId(int id) {
         validarTamanho(id);
-        validarUnicidade(id);
 
         this.id = id;
     }
@@ -23,7 +22,6 @@ public abstract class Id {
             throw new IllegalArgumentException("id_vendedor inválido: valor <= 0 ou valor > 99999 detectado");
         }
     }
-    public abstract void validarUnicidade(int id);
 
     @Override
     public String toString() {

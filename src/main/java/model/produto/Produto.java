@@ -9,11 +9,6 @@ public class Produto {
     private final ProdutoInfo produtoInfo;
 
     public Produto(Id id, ProdutoInfo produtoInfo) {
-        if (!(id instanceof ProdutoId)) {
-            System.err.println("Exceção disparado de: Produto");
-            throw new IllegalArgumentException("Id inválido: a entidade Produto aceita apenas ProdutoId");
-        }
-
         this.id = id;
         this.produtoInfo = produtoInfo;
     }

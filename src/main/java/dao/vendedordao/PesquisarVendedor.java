@@ -2,7 +2,6 @@ package dao.vendedordao;
 
 import dao.ValidacaoId;
 import model.Id;
-import model.vendedor.VendedorId;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;
 import util.Conexao;
