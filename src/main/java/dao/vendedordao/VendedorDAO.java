@@ -10,7 +10,6 @@ public class VendedorDAO {
     private final Atualizacoes atualizacoes;
     private final Remocoes remocoes;
 
-
     public VendedorDAO() {
         this.criacoes = new Criacoes();
         this.pesquisas = new Pesquisas();
@@ -35,6 +34,9 @@ public class VendedorDAO {
     }
 
     /* Métodos de atualização */
+    public void atualizar(Vendedor novoVendedor) {
+        atualizacoes.atualizarDados(novoVendedor);
+    }
 
     /* Métodos de remoção */
     public void removerComId(Vendedor vendedorApenasId) {
