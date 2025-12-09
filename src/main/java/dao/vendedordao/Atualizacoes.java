@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 public class Atualizacoes {
 
-    public void atualizarDados(Vendedor novoVendedor) {
+    protected void atualizarDados(Vendedor novoVendedor) {
         String sql = "UPDATE vendedor SET id = ?, nome = ?, telefone = ? WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();

@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 public class Remocoes {
 
-    public void deletarVendedorPorId(Vendedor vendedorApenasComId) {
+    protected void deletarVendedorPorId(Vendedor vendedorApenasComId) {
         String sql = "DELETE FROM vendedor WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Pesquisas {
 
-    public Vendedor obterVendedorPorId(Vendedor vendedorApenasComId) {
+    protected Vendedor obterVendedorPorId(Vendedor vendedorApenasComId) {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
         Vendedor novoVendedor = null;
 
@@ -35,7 +35,7 @@ public class Pesquisas {
         }
     }
 
-    public ArrayList<Vendedor> listarVendedores() {
+    protected ArrayList<Vendedor> listarVendedores() {
         String sql = "SELECT * FROM vendedor";
         ArrayList<Vendedor> vendedores = new ArrayList<>();
 
