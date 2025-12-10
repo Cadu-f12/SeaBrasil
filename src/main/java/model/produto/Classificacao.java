@@ -9,8 +9,8 @@ public class Classificacao {
         setNome(nome);
     }
 
-    protected Categoria getCategoria() {
-        return categoria;
+    protected String getNomeCategoria() {
+        return categoria.name();
     }
     protected void setCategoria(Categoria categoria) {
         if (categoria == null) {

@@ -11,8 +11,12 @@ public class ProdutoInfo {
         this.preco = preco;
     }
 
-    public Categoria captureCategoria() {
-        return this.classificacao.getCategoria();
+    public String captureNomeCategoria() {
+        return this.classificacao.getNomeCategoria();
+    }
+
+    public String captureNome() {
+        return this.classificacao.getNome();
     }
 
     public BigDecimal capturePreco() {

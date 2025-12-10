@@ -17,10 +17,15 @@ public class Produto {
         return this.id.getId();
     }
 
-    public Categoria captureProdutoInfoCategoria() {
-        return this.produtoInfo.captureCategoria();
+    public String captureNomeCategoria() {
+        return this.produtoInfo.captureNomeCategoria();
     }
-    public BigDecimal captureProdutoInfoPreco() {
+
+    public String captureNome() {
+        return this.produtoInfo.captureNome();
+    }
+
+    public BigDecimal capturePreco() {
         return this.produtoInfo.capturePreco();
     }
 }
