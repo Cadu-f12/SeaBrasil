@@ -24,4 +24,7 @@ public class ProdutoDAO {
 
         criacoes.addProdutoComId(produtoComId);
     }
+    public void criarComNome(Produto produtoComNome) {
+        criacoes.addProdutoComNome(produtoComNome);
+    }
 }
