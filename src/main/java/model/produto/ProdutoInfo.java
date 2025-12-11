@@ -22,4 +22,12 @@ public class ProdutoInfo {
     public BigDecimal capturePreco() {
         return this.preco.getPreco();
     }
+
+    @Override
+    public String toString() {
+        return "ProdutoInfo{" +
+                "classificacao=" + classificacao +
+                ", preco=" + preco +
+                '}';
+    }
 }
