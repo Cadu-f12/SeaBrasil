@@ -3,15 +3,18 @@ package dao.produtodao;
 import dao.ValidacaoId;
 import model.produto.Produto;
 
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class ProdutoDAO {
     ValidacaoId validacaoId;
-    Criacoes criacoes = new Criacoes();
+    Criacoes criacoes;
+    Pesquisas pesquisas;
 
     public ProdutoDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new Criacoes();
+        this.pesquisas = new Pesquisas();
     }
 
     /* Métodos de criação */
@@ -26,5 +29,19 @@ public class ProdutoDAO {
     }
     public void criarComNome(Produto produtoComNome) {
         criacoes.addProdutoComNome(produtoComNome);
+    }
+
+    /* Métodos de pesquisa */
+    public Produto pesquisarPorId(Produto produtoComId) {
+        boolean b = validacaoId.existeIdProduto(produtoComId.captureId());
+        if (!b) {
+            System.err.println("Exceção disparada de: ProdutoDAO.pesquisarPorId");
+            throw new NoSuchElementException("id_produto inválido: não existente no sistema");
+        }
+
+        return pesquisas.obterProdutoPorId(produtoComId);
+    }
+    public ArrayList<Produto> listar() {
+        return pesquisas.listar();
     }
 }
