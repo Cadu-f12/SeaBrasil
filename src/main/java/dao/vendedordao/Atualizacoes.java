@@ -9,14 +9,13 @@ import java.sql.PreparedStatement;
 public class Atualizacoes {
 
     protected void atualizarDados(Vendedor novoVendedor) {
-        String sql = "UPDATE vendedor SET id = ?, nome = ?, telefone = ? WHERE id = ?";
+        String sql = "UPDATE vendedor SET nome = ?, telefone = ? WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);) {
-            pstmt.setInt(1, novoVendedor.captureVendedorId());
-            pstmt.setString(2, novoVendedor.captureNome());
-            pstmt.setString(3, novoVendedor.captureTelefone());
-            pstmt.setInt(4, novoVendedor.captureVendedorId());
+            pstmt.setString(1, novoVendedor.captureNome());
+            pstmt.setString(2, novoVendedor.captureTelefone());
+            pstmt.setInt(3, novoVendedor.captureVendedorId());
 
             pstmt.executeUpdate();
         } catch (Exception e) {
