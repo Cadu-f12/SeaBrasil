@@ -29,10 +29,10 @@ public class VendedorDAO {
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
         }
 
-        return pesquisas.obterVendedorPorId(vendedorApenasId);
+        return pesquisas.obterPorId(vendedorApenasId);
     }
     public ArrayList<Vendedor> listar() {
-        return pesquisas.listarVendedores();
+        return pesquisas.listar();
     }
 
     /* Métodos de criação */
@@ -43,11 +43,11 @@ public class VendedorDAO {
             throw new NoSuchElementException("id_vendedor inválido: já existente no sistema");
         }
 
-        criacoes.addVendedorComId(vendedorComId);
+        criacoes.addComId(vendedorComId);
     }
     public void criarComNome(Vendedor vendedorComNome) {
         System.err.println("Exceção disparada de: VendedorDAO.criarComNome");
-        criacoes.addVendedorComNome(vendedorComNome);
+        criacoes.addComNome(vendedorComNome);
     }
 
     /* Métodos de atualização */
@@ -58,17 +58,17 @@ public class VendedorDAO {
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
         }
 
-        atualizacoes.atualizarDados(novoVendedor);
+        atualizacoes.atualizar(novoVendedor);
     }
 
     /* Métodos de remoção */
-    public void removerComId(Vendedor vendedorApenasId) {
+    public void excluirPorId(Vendedor vendedorApenasId) {
         boolean b = validacaoId.existeIdVendedor(vendedorApenasId.captureVendedorId());
         if (!b) {
-            System.err.println("Exceção disparada de: VendedorDAO.removerComId");
+            System.err.println("Exceção disparada de: VendedorDAO.excluirPorId");
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
         }
 
-        remocoes.deletarVendedorPorId(vendedorApenasId);
+        remocoes.removerPorId(vendedorApenasId);
     }
 }

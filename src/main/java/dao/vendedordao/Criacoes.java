@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 
 public class Criacoes {
 
-    protected void addVendedorComId(Vendedor vendedorComTudo) {
+    protected void addComId(Vendedor vendedorComTudo) {
         String sql = "INSERT INTO vendedor (id, nome, telefone) VALUES (?, ?, ?)";
 
         try (Connection conn = Conexao.getConnection();
@@ -23,7 +23,7 @@ public class Criacoes {
         }
     }
 
-    protected void addVendedorComNome(Vendedor vendedorComNome) {
+    protected void addComNome(Vendedor vendedorComNome) {
         String sql = "INSERT INTO vendedor (nome, telefone) VALUES (?, ?)";
 
         try (Connection conn = Conexao.getConnection();
