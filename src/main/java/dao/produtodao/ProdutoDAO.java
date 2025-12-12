@@ -10,11 +10,13 @@ public class ProdutoDAO {
     ValidacaoId validacaoId;
     Criacoes criacoes;
     Pesquisas pesquisas;
+    Atualizacoes atualizacoes;
 
     public ProdutoDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new Criacoes();
         this.pesquisas = new Pesquisas();
+        this.atualizacoes = new Atualizacoes();
     }
 
     /* Métodos de criação */
@@ -44,4 +46,17 @@ public class ProdutoDAO {
     public ArrayList<Produto> listar() {
         return pesquisas.listar();
     }
+
+    /* Métodos de atualização */
+    public void atualizar(Produto novoProduto) {
+        System.err.println("Exceção disparada de: ProdutoDAO.atualizar");
+        boolean b = validacaoId.existeIdProduto(novoProduto.captureId());
+        if (!b) {
+            throw new NoSuchElementException("id_produto inválido: id não encontrado no sistema");
+        }
+
+        atualizacoes.atualizar(novoProduto);
+    }
+
+
 }
