@@ -11,12 +11,15 @@ public class ProdutoDAO {
     Criacoes criacoes;
     Pesquisas pesquisas;
     Atualizacoes atualizacoes;
+    Remocoes remocoes;
+
 
     public ProdutoDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new Criacoes();
         this.pesquisas = new Pesquisas();
         this.atualizacoes = new Atualizacoes();
+        this.remocoes = new Remocoes();
     }
 
     /* Métodos de criação */
@@ -58,5 +61,15 @@ public class ProdutoDAO {
         atualizacoes.atualizar(novoProduto);
     }
 
+    /* Métodos de remoção */
+    public void excluir(Produto produto) {
+        boolean b = validacaoId.existeIdProduto(produto.captureId());
+        if (!b) {
+            System.err.println("Exceção disparada de: ProdutoDAO.excluir");
+            throw new NoSuchElementException("id_produto inválido: não existente no sistema");
+        }
+
+        remocoes.removerPorId(produto);
+    }
 
 }
