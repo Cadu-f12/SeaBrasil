@@ -9,10 +9,10 @@ public class VendedorInfo {
         setTelefone(telefone);
     }
 
-    protected String getNome() {
+    String getNome() {
         return nome;
     }
-    protected void setNome(String nome) {
+    void setNome(String nome) {
         if (nome == null || nome.isEmpty()) {
             System.err.println("Exceção disparado de: VendedorInfo.setNome");
             throw new IllegalArgumentException("nome inválido: valor vazio ou null não é permitido");
@@ -29,10 +29,10 @@ public class VendedorInfo {
         this.nome = nome;
     }
 
-    protected String getTelefone() {
+    String getTelefone() {
         return telefone;
     }
-    protected void setTelefone(String telefone) {
+    void setTelefone(String telefone) {
         if (telefone == null) {
             this.telefone = null;
             return;
