@@ -9,7 +9,7 @@ public class Classificacao {
         setNome(nome);
     }
 
-    protected String getNomeCategoria() {
+    String getNomeCategoria() {
         return categoria.name();
     }
     protected void setCategoria(Categoria categoria) {
@@ -21,7 +21,7 @@ public class Classificacao {
         this.categoria = categoria;
     }
 
-    protected String getNome() {
+    String getNome() {
         return nome;
     }
     protected void setNome(String nome) {

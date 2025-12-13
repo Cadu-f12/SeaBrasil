@@ -9,7 +9,7 @@ public class Preco {
         setPreco(valor);
     }
 
-    protected BigDecimal getPreco() {
+    BigDecimal getPreco() {
         return preco;
     }
     protected void setPreco(BigDecimal preco) {
