@@ -13,9 +13,9 @@ public class Criacoes {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedorComTudo.captureVendedorId());
-            pstmt.setString(2, vendedorComTudo.captureNome());
-            pstmt.setString(3, vendedorComTudo.captureTelefone());
+            pstmt.setInt(1, vendedorComTudo.getVendedorId());
+            pstmt.setString(2, vendedorComTudo.getNome());
+            pstmt.setString(3, vendedorComTudo.getTelefone());
 
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -28,8 +28,8 @@ public class Criacoes {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, vendedorComNome.captureNome());
-            pstmt.setString(2, vendedorComNome.captureTelefone());
+            pstmt.setString(1, vendedorComNome.getNome());
+            pstmt.setString(2, vendedorComNome.getTelefone());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

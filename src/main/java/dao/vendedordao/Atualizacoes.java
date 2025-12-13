@@ -13,9 +13,9 @@ public class Atualizacoes {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);) {
-            pstmt.setString(1, novoVendedor.captureNome());
-            pstmt.setString(2, novoVendedor.captureTelefone());
-            pstmt.setInt(3, novoVendedor.captureVendedorId());
+            pstmt.setString(1, novoVendedor.getNome());
+            pstmt.setString(2, novoVendedor.getTelefone());
+            pstmt.setInt(3, novoVendedor.getVendedorId());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

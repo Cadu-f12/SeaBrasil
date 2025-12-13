@@ -13,7 +13,7 @@ public class Remocoes {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedorApenasComId.captureVendedorId());
+            pstmt.setInt(1, vendedorApenasComId.getVendedorId());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

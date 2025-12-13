@@ -14,7 +14,7 @@ public class ResponsavelPagamento {
     }
 
     int getVendedorId() {
-        return this.vendedor.captureVendedorId();
+        return this.vendedor.getVendedorId();
     }
 
     String getPagamento() {

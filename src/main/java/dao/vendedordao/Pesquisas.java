@@ -19,7 +19,7 @@ public class Pesquisas {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, vendedorApenasComId.captureVendedorId());
+            pstmt.setInt(1, vendedorApenasComId.getVendedorId());
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {

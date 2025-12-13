@@ -23,7 +23,7 @@ public class VendedorDAO {
 
     /* Métodos de pesquisa */
     public Vendedor pesquisarPorId(Vendedor vendedorApenasId) {
-        boolean b = validacaoId.existeIdVendedor(vendedorApenasId.captureVendedorId());
+        boolean b = validacaoId.existeIdVendedor(vendedorApenasId.getVendedorId());
         if (!b) {
             System.err.println("Exceção disparada de: VendedorDAO.pesquisarPorId");
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
@@ -37,7 +37,7 @@ public class VendedorDAO {
 
     /* Métodos de criação */
     public void criarComId(Vendedor vendedorComId) {
-        boolean b = validacaoId.existeIdVendedor(vendedorComId.captureVendedorId());
+        boolean b = validacaoId.existeIdVendedor(vendedorComId.getVendedorId());
         if (b) {
             System.err.println("Exceção disparada de: VendedorDAO.criarComId");
             throw new NoSuchElementException("id_vendedor inválido: já existente no sistema");
@@ -52,7 +52,7 @@ public class VendedorDAO {
 
     /* Métodos de atualização */
     public void atualizar(Vendedor novoVendedor) {
-        boolean b = validacaoId.existeIdVendedor(novoVendedor.captureVendedorId());
+        boolean b = validacaoId.existeIdVendedor(novoVendedor.getVendedorId());
         if (!b) {
             System.err.println("Exceção disparada de: VendedorDAO.atualizar");
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
@@ -63,7 +63,7 @@ public class VendedorDAO {
 
     /* Métodos de remoção */
     public void excluirPorId(Vendedor vendedorApenasId) {
-        boolean b = validacaoId.existeIdVendedor(vendedorApenasId.captureVendedorId());
+        boolean b = validacaoId.existeIdVendedor(vendedorApenasId.getVendedorId());
         if (!b) {
             System.err.println("Exceção disparada de: VendedorDAO.excluirPorId");
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");

@@ -11,15 +11,15 @@ public class Vendedor {
         this.vendedorInfo = vendedorInfo;
     }
 
-    public int captureVendedorId() {
+    public int getVendedorId() {
         return this.id.getId();
     }
 
-    public String captureNome() {
+    public String getNome() {
         return this.vendedorInfo.getNome();
     }
 
-    public String captureTelefone() {
+    public String getTelefone() {
         return this.vendedorInfo.getTelefone();
     }
 
