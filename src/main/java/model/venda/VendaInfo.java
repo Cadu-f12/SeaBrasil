@@ -12,23 +12,23 @@ public class VendaInfo {
         this.responsavelPagamento = responsavelPagamento;
     }
 
-    public int captureProdutoId() {
+    int captureProdutoId() {
         return this.itemVenda.captureProdutoId();
     }
-    public BigDecimal captureQuantidade() {
+    BigDecimal captureQuantidade() {
         return this.itemVenda.captureQuantidade();
     }
-    public BigDecimal captureValorTotal() {
+    BigDecimal captureValorTotal() {
         return this.itemVenda.captureTotal();
     }
 
-    public int captureVendedorId() {
+    int captureVendedorId() {
         return this.responsavelPagamento.captureVendedorId();
     }
-    public String capturePagamento() {
+    String capturePagamento() {
         return this.responsavelPagamento.capturePagamento();
     }
-    public LocalDate captureData() {
+    LocalDate captureData() {
         return this.responsavelPagamento.captureData();
     }
 

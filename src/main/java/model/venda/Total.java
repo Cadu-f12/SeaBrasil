@@ -4,14 +4,14 @@ import model.produto.Produto;
 
 import java.math.BigDecimal;
 
-public class Total {
+class Total {
     private final BigDecimal somaTotal;
 
-    public Total(Produto produto, BigDecimal quantidade) {
+    Total(Produto produto, BigDecimal quantidade) {
         this.somaTotal = realizarSoma(produto.capturePreco(), quantidade);
     }
 
-    protected BigDecimal getSoma() {
+    BigDecimal getSoma() {
         return this.somaTotal;
     }
 

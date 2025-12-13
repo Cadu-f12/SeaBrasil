@@ -9,10 +9,10 @@ public class Quantidade {
         setQuantidade(quantidade);
     }
 
-    protected BigDecimal getQuantidade() {
+    BigDecimal getQuantidade() {
         return quantidade;
     }
-    protected void setQuantidade(BigDecimal quantidade) {
+    private void setQuantidade(BigDecimal quantidade) {
         if (quantidade == null) {
             System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
             throw new IllegalArgumentException("quantidade inválida: valor nulo detectado");

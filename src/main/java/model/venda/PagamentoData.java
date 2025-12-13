@@ -11,7 +11,7 @@ public class PagamentoData {
         dataDaVenda();
     }
 
-    public String getFormaDePagamento() {
+    String getFormaDePagamento() {
         return formaDePagamento.name();
     }
     private void setFormaDePagamento(Pagamento formaDePagamento) {
@@ -22,7 +22,7 @@ public class PagamentoData {
         this.formaDePagamento = formaDePagamento;
     }
 
-    public LocalDate getData() {
+    LocalDate getData() {
         return data;
     }
     private void dataDaVenda() {
