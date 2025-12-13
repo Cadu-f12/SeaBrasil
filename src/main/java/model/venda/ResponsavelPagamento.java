@@ -4,11 +4,11 @@ import model.vendedor.Vendedor;
 
 import java.time.LocalDate;
 
-public class PagamentoResponsavel {
+public class ResponsavelPagamento {
     private final PagamentoData pagamentoData;
     private final Vendedor vendedor;
 
-    public PagamentoResponsavel(PagamentoData pagamentoData, Vendedor vendedor) {
+    public ResponsavelPagamento(PagamentoData pagamentoData, Vendedor vendedor) {
         this.pagamentoData = pagamentoData;
         this.vendedor = vendedor;
     }
@@ -17,7 +17,7 @@ public class PagamentoResponsavel {
         return this.vendedor.captureVendedorId();
     }
 
-    public Pagamento capturePagamento() {
+    public String capturePagamento() {
         return this.pagamentoData.getFormaDePagamento();
     }
 

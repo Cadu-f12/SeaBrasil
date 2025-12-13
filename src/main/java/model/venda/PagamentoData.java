@@ -11,8 +11,8 @@ public class PagamentoData {
         dataDaVenda();
     }
 
-    public Pagamento getFormaDePagamento() {
-        return formaDePagamento;
+    public String getFormaDePagamento() {
+        return formaDePagamento.name();
     }
     private void setFormaDePagamento(Pagamento formaDePagamento) {
         if (formaDePagamento == null) {

@@ -8,9 +8,9 @@ import java.time.LocalDate;
 public class Venda {
     private final Id id;
     private final ItemVenda itemVenda;
-    private final PagamentoResponsavel pagResponsavel;
+    private final ResponsavelPagamento pagResponsavel;
 
-    public Venda(Id id, ItemVenda itemVenda, PagamentoResponsavel pagResponsavel) {
+    public Venda(Id id, ItemVenda itemVenda, ResponsavelPagamento pagResponsavel) {
         this.id = id;
         this.itemVenda = itemVenda;
         this.pagResponsavel = pagResponsavel;
@@ -35,7 +35,7 @@ public class Venda {
     public int captureIdVendedor() {
         return this.pagResponsavel.captureVendedorId();
     }
-    public Pagamento capturePgResponsavelPagamento() {
+    public String capturePgResponsavelPagamento() {
         return this.pagResponsavel.capturePagamento();
     }
     public LocalDate captureDataVenda() {
