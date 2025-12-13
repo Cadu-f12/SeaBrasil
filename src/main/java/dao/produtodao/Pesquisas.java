@@ -17,7 +17,7 @@ public class Pesquisas {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, produtoApenasComId.captureId());
+            pstmt.setInt(1, produtoApenasComId.getProdutoId());
 
             ResultSet rs = pstmt.executeQuery();
             Produto produto = null;

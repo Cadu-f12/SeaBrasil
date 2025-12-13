@@ -13,20 +13,20 @@ public class Produto {
         this.produtoInfo = produtoInfo;
     }
 
-    public int captureId() {
+    public int getProdutoId() {
         return this.id.getId();
     }
 
-    public String captureNomeCategoria() {
-        return this.produtoInfo.captureNomeCategoria();
+    public String getNomeCategoria() {
+        return this.produtoInfo.getNomeCategoria();
     }
 
-    public String captureNome() {
-        return this.produtoInfo.captureNome();
+    public String getNome() {
+        return this.produtoInfo.getNome();
     }
 
-    public BigDecimal capturePreco() {
-        return this.produtoInfo.capturePreco();
+    public BigDecimal getPreco() {
+        return this.produtoInfo.getPreco();
     }
 
     @Override

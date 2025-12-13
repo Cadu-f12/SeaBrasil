@@ -13,10 +13,10 @@ public class Atualizacoes {
 
         try (Connection conn = Conexao.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, novoProduto.captureNomeCategoria());
-            pstmt.setString(2, novoProduto.captureNome());
-            pstmt.setBigDecimal(3, novoProduto.capturePreco());
-            pstmt.setInt(4, novoProduto.captureId());
+            pstmt.setString(1, novoProduto.getNomeCategoria());
+            pstmt.setString(2, novoProduto.getNome());
+            pstmt.setBigDecimal(3, novoProduto.getPreco());
+            pstmt.setInt(4, novoProduto.getProdutoId());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

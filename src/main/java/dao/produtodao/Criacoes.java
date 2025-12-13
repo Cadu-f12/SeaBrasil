@@ -13,10 +13,10 @@ public class Criacoes {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, produtoComId.captureId());
-            pstmt.setString(2, produtoComId.captureNomeCategoria());
-            pstmt.setString(3, produtoComId.captureNome());
-            pstmt.setBigDecimal(4, produtoComId.capturePreco());
+            pstmt.setInt(1, produtoComId.getProdutoId());
+            pstmt.setString(2, produtoComId.getNomeCategoria());
+            pstmt.setString(3, produtoComId.getNome());
+            pstmt.setBigDecimal(4, produtoComId.getPreco());
 
             pstmt.executeUpdate();
         } catch (Exception e) {
@@ -29,9 +29,9 @@ public class Criacoes {
 
         try (Connection conn = Conexao.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, produtoComNome.captureNomeCategoria());
-            pstmt.setString(2, produtoComNome.captureNome());
-            pstmt.setBigDecimal(3, produtoComNome.capturePreco());
+            pstmt.setString(1, produtoComNome.getNomeCategoria());
+            pstmt.setString(2, produtoComNome.getNome());
+            pstmt.setBigDecimal(3, produtoComNome.getPreco());
 
             pstmt.executeUpdate();
         } catch (Exception e) {

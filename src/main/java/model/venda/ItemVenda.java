@@ -16,7 +16,7 @@ public class ItemVenda {
     }
 
     int getProdutoId() {
-        return this.produto.captureId();
+        return this.produto.getProdutoId();
     }
 
     BigDecimal getQuantidade() {

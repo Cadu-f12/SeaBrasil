@@ -24,7 +24,7 @@ public class ProdutoDAO {
 
     /* Métodos de criação */
     public void criarComId(Produto produtoComId) {
-        boolean b = validacaoId.existeIdProduto(produtoComId.captureId());
+        boolean b = validacaoId.existeIdProduto(produtoComId.getProdutoId());
         if (b) {
             System.err.println("Exceção disparada de: ProdutoDAO.criarComId");
             throw new NoSuchElementException("id_produto inválido: já existente no sistema");
@@ -38,7 +38,7 @@ public class ProdutoDAO {
 
     /* Métodos de pesquisa */
     public Produto pesquisarPorId(Produto produtoComId) {
-        boolean b = validacaoId.existeIdProduto(produtoComId.captureId());
+        boolean b = validacaoId.existeIdProduto(produtoComId.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: ProdutoDAO.pesquisarPorId");
             throw new NoSuchElementException("id_produto inválido: não existente no sistema");
@@ -52,7 +52,7 @@ public class ProdutoDAO {
 
     /* Métodos de atualização */
     public void atualizar(Produto novoProduto) {
-        boolean b = validacaoId.existeIdProduto(novoProduto.captureId());
+        boolean b = validacaoId.existeIdProduto(novoProduto.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: ProdutoDAO.atualizar");
             throw new NoSuchElementException("id_produto inválido: id não encontrado no sistema");
@@ -63,7 +63,7 @@ public class ProdutoDAO {
 
     /* Métodos de remoção */
     public void excluir(Produto produto) {
-        boolean b = validacaoId.existeIdProduto(produto.captureId());
+        boolean b = validacaoId.existeIdProduto(produto.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: ProdutoDAO.excluir");
             throw new NoSuchElementException("id_produto inválido: não existente no sistema");

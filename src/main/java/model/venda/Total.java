@@ -8,7 +8,7 @@ class Total {
     private final BigDecimal valorTotal;
 
     Total(Produto produto, BigDecimal quantidade) {
-        this.valorTotal = realizarSoma(produto.capturePreco(), quantidade);
+        this.valorTotal = realizarSoma(produto.getPreco(), quantidade);
     }
 
     BigDecimal getValorTotal() {
