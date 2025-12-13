@@ -52,9 +52,9 @@ public class ProdutoDAO {
 
     /* Métodos de atualização */
     public void atualizar(Produto novoProduto) {
-        System.err.println("Exceção disparada de: ProdutoDAO.atualizar");
         boolean b = validacaoId.existeIdProduto(novoProduto.captureId());
         if (!b) {
+            System.err.println("Exceção disparada de: ProdutoDAO.atualizar");
             throw new NoSuchElementException("id_produto inválido: id não encontrado no sistema");
         }
 
