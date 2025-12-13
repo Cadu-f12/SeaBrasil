@@ -7,47 +7,42 @@ import java.time.LocalDate;
 
 public class Venda {
     private final Id id;
-    private final ItemVenda itemVenda;
-    private final ResponsavelPagamento pagResponsavel;
+    private final VendaInfo vendaInfo;
 
-    public Venda(Id id, ItemVenda itemVenda, ResponsavelPagamento pagResponsavel) {
+    public Venda(Id id, VendaInfo vendaInfo) {
         this.id = id;
-        this.itemVenda = itemVenda;
-        this.pagResponsavel = pagResponsavel;
+        this.vendaInfo = vendaInfo;
     }
 
-    public int captureId() {
+    public int captureVendaId() {
         return this.id.getId();
     }
 
-    /* Dados do ItemVenda */
-    public int captureIdProduto() {
-        return this.itemVenda.captureProdutoId();
+    public int captureProdutoId() {
+        return this.vendaInfo.captureProdutoId();
     }
-    public BigDecimal captureItemVendaQuantidade() {
-        return this.itemVenda.captureQuantidade();
+    public BigDecimal captureQuantidade() {
+        return this.vendaInfo.captureQuantidade();
     }
-    public BigDecimal captureItemVendaTotal() {
-        return this.itemVenda.captureTotal();
+    public BigDecimal captureValorTotal() {
+        return this.vendaInfo.captureValorTotal();
     }
 
-    /* Dados do PagamentoResponsavel */
-    public int captureIdVendedor() {
-        return this.pagResponsavel.captureVendedorId();
+    public int captureVendedorId() {
+        return this.vendaInfo.captureVendedorId();
     }
-    public String capturePgResponsavelPagamento() {
-        return this.pagResponsavel.capturePagamento();
+    public String capturePagamento() {
+        return this.vendaInfo.capturePagamento();
     }
-    public LocalDate captureDataVenda() {
-        return this.pagResponsavel.captureData();
+    public LocalDate captureData() {
+        return this.vendaInfo.captureData();
     }
 
     @Override
     public String toString() {
         return "Venda{" +
                 "id=" + id +
-                ", itemVenda=" + itemVenda +
-                ", pagResponsavel=" + pagResponsavel +
+                ", vendaInfo=" + vendaInfo +
                 '}';
     }
 }

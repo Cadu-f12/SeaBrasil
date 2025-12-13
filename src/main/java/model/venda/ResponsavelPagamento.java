@@ -20,7 +20,6 @@ public class ResponsavelPagamento {
     public String capturePagamento() {
         return this.pagamentoData.getFormaDePagamento();
     }
-
     public LocalDate captureData() {
         return this.pagamentoData.getData();
     }
