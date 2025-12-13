@@ -15,16 +15,16 @@ public class ItemVenda {
         this.total = new Total(produto, this.quantidade.getQuantidade());
     }
 
-    int captureProdutoId() {
+    int getProdutoId() {
         return this.produto.captureId();
     }
 
-    BigDecimal captureQuantidade() {
+    BigDecimal getQuantidade() {
         return this.quantidade.getQuantidade();
     }
 
-    BigDecimal captureTotal() {
-        return this.total.getSoma();
+    BigDecimal getValorTotal() {
+        return this.total.getValorTotal();
     }
 
     @Override

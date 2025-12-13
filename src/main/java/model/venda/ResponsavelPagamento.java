@@ -13,14 +13,14 @@ public class ResponsavelPagamento {
         this.vendedor = vendedor;
     }
 
-    int captureVendedorId() {
+    int getVendedorId() {
         return this.vendedor.captureVendedorId();
     }
 
-    String capturePagamento() {
-        return this.pagamentoData.getFormaDePagamento();
+    String getPagamento() {
+        return this.pagamentoData.getPagamento();
     }
-    LocalDate captureData() {
+    LocalDate getData() {
         return this.pagamentoData.getData();
     }
 

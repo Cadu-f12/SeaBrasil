@@ -14,28 +14,28 @@ public class Venda {
         this.vendaInfo = vendaInfo;
     }
 
-    public int captureVendaId() {
+    public int getVendaId() {
         return this.id.getId();
     }
 
-    public int captureProdutoId() {
-        return this.vendaInfo.captureProdutoId();
+    public int getProdutoId() {
+        return this.vendaInfo.getProdutoId();
     }
-    public BigDecimal captureQuantidade() {
-        return this.vendaInfo.captureQuantidade();
+    public BigDecimal getQuantidade() {
+        return this.vendaInfo.getQuantidade();
     }
-    public BigDecimal captureValorTotal() {
-        return this.vendaInfo.captureValorTotal();
+    public BigDecimal getValorTotal() {
+        return this.vendaInfo.getValorTotal();
     }
 
-    public int captureVendedorId() {
-        return this.vendaInfo.captureVendedorId();
+    public int getVendedorId() {
+        return this.vendaInfo.getVendedorId();
     }
-    public String capturePagamento() {
-        return this.vendaInfo.capturePagamento();
+    public String getPagamento() {
+        return this.vendaInfo.getPagamento();
     }
-    public LocalDate captureData() {
-        return this.vendaInfo.captureData();
+    public LocalDate getData() {
+        return this.vendaInfo.getData();
     }
 
     @Override
