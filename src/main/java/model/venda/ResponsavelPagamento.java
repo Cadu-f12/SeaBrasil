@@ -20,7 +20,7 @@ public class ResponsavelPagamento {
     String getPagamento() {
         return this.pagamentoData.getPagamento();
     }
-    LocalDate getData() {
+    String getData() {
         return this.pagamentoData.getData();
     }
 

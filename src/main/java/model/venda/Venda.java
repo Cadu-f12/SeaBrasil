@@ -34,7 +34,7 @@ public class Venda {
     public String getPagamento() {
         return this.vendaInfo.getPagamento();
     }
-    public LocalDate getData() {
+    public String getData() {
         return this.vendaInfo.getData();
     }
 

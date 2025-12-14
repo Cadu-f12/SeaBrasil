@@ -28,7 +28,7 @@ public class VendaInfo {
     String getPagamento() {
         return this.responsavelPagamento.getPagamento();
     }
-    LocalDate getData() {
+    String getData() {
         return this.responsavelPagamento.getData();
     }
 

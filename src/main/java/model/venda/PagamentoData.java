@@ -1,6 +1,7 @@
 package model.venda;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class PagamentoData {
     private Pagamento formaDePagamento;
@@ -22,8 +23,10 @@ public class PagamentoData {
         this.formaDePagamento = formaDePagamento;
     }
 
-    LocalDate getData() {
-        return data;
+    String getData() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        return data.format(dtf);
     }
     private void dataDaVenda() {
         this.data = LocalDate.now();
