@@ -21,7 +21,7 @@ public class Venda {
     public int getProdutoId() {
         return this.vendaInfo.getProdutoId();
     }
-    public BigDecimal getQuantidade() {
+    public int getQuantidade() {
         return this.vendaInfo.getQuantidade();
     }
     public BigDecimal getValorTotal() {

@@ -12,14 +12,14 @@ public class ItemVenda {
     public ItemVenda(Produto produto, Quantidade quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
-        this.total = new Total(produto, this.quantidade.getQuantidade());
+        this.total = new Total(produto, BigDecimal.valueOf(this.quantidade.getQuantidade()));
     }
 
     int getProdutoId() {
         return this.produto.getProdutoId();
     }
 
-    BigDecimal getQuantidade() {
+    int getQuantidade() {
         return this.quantidade.getQuantidade();
     }
 

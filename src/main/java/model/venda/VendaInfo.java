@@ -15,7 +15,7 @@ public class VendaInfo {
     int getProdutoId() {
         return this.itemVenda.getProdutoId();
     }
-    BigDecimal getQuantidade() {
+    int getQuantidade() {
         return this.itemVenda.getQuantidade();
     }
     BigDecimal getValorTotal() {

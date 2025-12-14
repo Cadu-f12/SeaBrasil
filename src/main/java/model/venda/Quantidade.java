@@ -3,27 +3,24 @@ package model.venda;
 import java.math.BigDecimal;
 
 public class Quantidade {
-    BigDecimal quantidade;
+    int quantidade;
 
-    public Quantidade(BigDecimal quantidade) {
+    public Quantidade(int quantidade) {
         setQuantidade(quantidade);
     }
 
-    BigDecimal getQuantidade() {
+    int getQuantidade() {
         return quantidade;
     }
-    private void setQuantidade(BigDecimal quantidade) {
-        if (quantidade == null) {
-            System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
-            throw new IllegalArgumentException("quantidade inválida: valor nulo detectado");
-        }
+    private void setQuantidade(int quantidade) {
         // quantidade < 1
-        if (quantidade.compareTo(BigDecimal.ONE) < 0) {
+        if (quantidade < 1) {
             System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
             throw new IllegalArgumentException("quantidade inválida: valor menor que 1 detectado");
         }
+
         // quantidade > 99
-        if (quantidade.compareTo(new BigDecimal("99")) > 0) {
+        if (quantidade > 99) {
             System.err.println("Exceção disparada de: ItemVenda.setQuantidade");
             throw new IllegalArgumentException("quantidade inválida: valor maior que 99 detectado");
         }
