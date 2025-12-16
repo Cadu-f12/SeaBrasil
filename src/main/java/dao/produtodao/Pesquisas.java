@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Pesquisas {
 
-    public Produto obterProdutoPorId(Produto produtoApenasComId) {
+    public Produto lerId(Produto produtoApenasComId) {
         String sql = "SELECT * FROM produto WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();
