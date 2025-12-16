@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Pesquisas {
 
-    protected Vendedor obterPorId(Vendedor vendedorApenasComId) {
+    protected Vendedor lerId(Vendedor vendedorApenasComId) {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
         Vendedor novoVendedor = null;
 
