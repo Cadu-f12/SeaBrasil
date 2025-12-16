@@ -7,9 +7,13 @@ public class PagamentoData {
     private Pagamento formaDePagamento;
     private LocalDate data;
 
+    public PagamentoData(Pagamento formaDePagamento, LocalDate data) {
+        setFormaDePagamento(formaDePagamento);
+        setDataDaVenda(data);
+    }
     public PagamentoData(Pagamento formaDePagamento) {
         setFormaDePagamento(formaDePagamento);
-        dataDaVenda();
+        setDataDaVenda();
     }
 
     String getPagamento() {
@@ -28,8 +32,16 @@ public class PagamentoData {
 
         return data.format(dtf);
     }
-    private void dataDaVenda() {
+    private void setDataDaVenda() {
         this.data = LocalDate.now();
+    }
+    private void setDataDaVenda(LocalDate data) {
+        if (data == null) {
+            System.err.println("Exceção disparada de: PagamentoData.setDataDaVenda");
+            throw new IllegalArgumentException("Data da venda inválida: valor nulo");
+        }
+
+        this.data = data;
     }
 
     @Override
