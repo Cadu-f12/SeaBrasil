@@ -1,8 +1,10 @@
 package dao.vendedordao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
+import dao.operacoes.vendedor.AtualizacoesVendedor;
 import dao.operacoes.vendedor.CriacoesVendedor;
 import dao.operacoes.vendedor.PesquisasVendedor;
 import model.vendedor.Vendedor;
@@ -14,14 +16,14 @@ public class VendedorDAO {
     private final ValidacaoId validacaoId;
     private final Criacoes<Vendedor> criacoes;
     private final Pesquisas<Vendedor> pesquisas;
-    private final Atualizacoes atualizacoes;
+    private final Atualizacoes<Vendedor> atualizacoes;
     private final Remocoes remocoes;
 
     public VendedorDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new CriacoesVendedor();
         this.pesquisas = new PesquisasVendedor();
-        this.atualizacoes = new Atualizacoes();
+        this.atualizacoes = new AtualizacoesVendedor();
         this.remocoes = new Remocoes();
     }
 

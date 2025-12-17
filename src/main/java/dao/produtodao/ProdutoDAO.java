@@ -1,8 +1,10 @@
 package dao.produtodao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
+import dao.operacoes.produto.AtualizacoesProduto;
 import dao.operacoes.produto.CriacoesProduto;
 import dao.operacoes.produto.PesquisasProduto;
 import model.produto.Produto;
@@ -14,7 +16,7 @@ public class ProdutoDAO {
     private final ValidacaoId validacaoId;
     private final Criacoes<Produto> criacoes;
     private final Pesquisas<Produto> pesquisas;
-    private final Atualizacoes atualizacoes;
+    private final Atualizacoes<Produto> atualizacoes;
     private final Remocoes remocoes;
 
 
@@ -22,7 +24,7 @@ public class ProdutoDAO {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new CriacoesProduto();
         this.pesquisas = new PesquisasProduto();
-        this.atualizacoes = new Atualizacoes();
+        this.atualizacoes = new AtualizacoesProduto();
         this.remocoes = new Remocoes();
     }
 

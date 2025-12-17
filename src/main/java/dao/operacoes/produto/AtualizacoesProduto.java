@@ -1,13 +1,15 @@
-package dao.produtodao;
+package dao.operacoes.produto;
 
+import dao.operacoes.Atualizacoes;
 import model.produto.Produto;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Atualizacoes {
+public class AtualizacoesProduto implements Atualizacoes<Produto> {
 
+    @Override
     public void atualizar(Produto novoProduto) {
         String sql = "UPDATE produto SET categoria = ?, nome = ?, preco = ? WHERE id = ?";
 

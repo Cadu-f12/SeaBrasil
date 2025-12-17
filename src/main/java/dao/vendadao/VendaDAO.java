@@ -1,8 +1,10 @@
 package dao.vendadao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
+import dao.operacoes.venda.AtualizacoesVenda;
 import dao.operacoes.venda.CriacoesVenda;
 import dao.operacoes.venda.PesquisasVenda;
 import model.venda.Venda;
@@ -14,14 +16,14 @@ public class VendaDAO {
     private final ValidacaoId validacaoId;
     private final Criacoes<Venda> criacoes;
     private final Pesquisas<Venda> pesquisas;
-    private final Atualizacoes atualizacoes;
+    private final Atualizacoes<Venda> atualizacoes;
     private final Remocoes remocoes;
 
     public VendaDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new CriacoesVenda();
         this.pesquisas = new PesquisasVenda();
-        this.atualizacoes = new Atualizacoes();
+        this.atualizacoes = new AtualizacoesVenda();
         this.remocoes = new Remocoes();
     }
 

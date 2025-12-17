@@ -1,5 +1,6 @@
-package dao.vendadao;
+package dao.operacoes.venda;
 
+import dao.operacoes.Atualizacoes;
 import model.venda.Venda;
 import util.Conexao;
 
@@ -7,8 +8,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.time.LocalDate;
 
-public class Atualizacoes {
+public class AtualizacoesVenda implements Atualizacoes<Venda> {
 
+    @Override
     public void atualizar(Venda novaVenda) {
         String sql = """
                     UPDATE venda SET idvendedor = ?, idproduto = ?, formadepagamento = ?, data = ?, quantidade = ?, total = ?

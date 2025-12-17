@@ -1,14 +1,16 @@
-package dao.vendedordao;
+package dao.operacoes.vendedor;
 
+import dao.operacoes.Atualizacoes;
 import model.vendedor.Vendedor;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Atualizacoes {
+public class AtualizacoesVendedor implements Atualizacoes<Vendedor> {
 
-    protected void atualizar(Vendedor novoVendedor) {
+    @Override
+    public void atualizar(Vendedor novoVendedor) {
         String sql = "UPDATE vendedor SET nome = ?, telefone = ? WHERE id = ?";
 
         try (Connection conn = Conexao.getConnection();
