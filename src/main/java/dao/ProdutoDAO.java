@@ -1,6 +1,5 @@
-package dao.produtodao;
+package dao;
 
-import dao.ValidacaoId;
 import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
