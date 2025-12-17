@@ -10,16 +10,18 @@ public class VendaDAO {
     ValidacaoId validacaoId;
     Criacoes criacoes;
     Pesquisas pesquisas;
+    Atualizacoes atualizacoes;
 
     public VendaDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new Criacoes();
         this.pesquisas = new Pesquisas();
+        this.atualizacoes = new Atualizacoes();
     }
 
     /* Métodos de pesquisa */
     public Venda pesquisarId(Venda vendaApenasComId) {
-        boolean b = validacaoId.existeIdProduto(vendaApenasComId.getProdutoId());
+        boolean b = validacaoId.existeIdVenda(vendaApenasComId.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: VendaDAO.pesquisarId");
             throw new NoSuchElementException("id_venda inválido: não existente no sistema");
@@ -33,7 +35,7 @@ public class VendaDAO {
 
     /* Métodos de criação */
     public void resgistrarId(Venda venda) {
-        boolean b = validacaoId.existeIdProduto(venda.getVendaId());
+        boolean b = validacaoId.existeIdVenda(venda.getVendaId());
         if (b) {
             System.err.println("Exceção disparada de: VendaDAO.criarComId");
             throw new NoSuchElementException("id_venda inválido: já existente no sistema");
@@ -44,5 +46,16 @@ public class VendaDAO {
     public void registrarNome(Venda venda) {
 
         criacoes.addVendaComNome(venda);
+    }
+
+    /* Métodos de atualização */
+    public void substituir(Venda novaVenda) {
+        boolean b = validacaoId.existeIdVenda(novaVenda.getVendaId());
+        if (b) {
+            System.err.println("Exceção disparada de: VendaDAO.criarComId");
+            throw new NoSuchElementException("id_venda inválido: já existente no sistema");
+        }
+
+        atualizacoes.atualizar(novaVenda);
     }
 }
