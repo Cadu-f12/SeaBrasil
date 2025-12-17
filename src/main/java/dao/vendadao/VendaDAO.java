@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class VendaDAO {
-    ValidacaoId validacaoId;
-    Criacoes<Venda> criacoes;
-    Pesquisas<Venda> pesquisas;
-    Atualizacoes atualizacoes;
-    Remocoes remocoes;
+    private final ValidacaoId validacaoId;
+    private final Criacoes<Venda> criacoes;
+    private final Pesquisas<Venda> pesquisas;
+    private final Atualizacoes atualizacoes;
+    private final Remocoes remocoes;
 
     public VendaDAO() {
         this.validacaoId = new ValidacaoId();

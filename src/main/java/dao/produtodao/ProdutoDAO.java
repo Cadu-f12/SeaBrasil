@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 public class ProdutoDAO {
-    ValidacaoId validacaoId;
-    Criacoes<Produto> criacoes;
-    Pesquisas<Produto> pesquisas;
-    Atualizacoes atualizacoes;
-    Remocoes remocoes;
+    private final ValidacaoId validacaoId;
+    private final Criacoes<Produto> criacoes;
+    private final Pesquisas<Produto> pesquisas;
+    private final Atualizacoes atualizacoes;
+    private final Remocoes remocoes;
 
 
     public ProdutoDAO() {
