@@ -4,9 +4,11 @@ import dao.ValidacaoId;
 import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
+import dao.operacoes.Remocoes;
 import dao.operacoes.vendedor.AtualizacoesVendedor;
 import dao.operacoes.vendedor.CriacoesVendedor;
 import dao.operacoes.vendedor.PesquisasVendedor;
+import dao.operacoes.vendedor.RemocoesVendedor;
 import model.vendedor.Vendedor;
 
 import java.util.ArrayList;
@@ -17,14 +19,14 @@ public class VendedorDAO {
     private final Criacoes<Vendedor> criacoes;
     private final Pesquisas<Vendedor> pesquisas;
     private final Atualizacoes<Vendedor> atualizacoes;
-    private final Remocoes remocoes;
+    private final Remocoes<Vendedor> remocoes;
 
     public VendedorDAO() {
         this.validacaoId = new ValidacaoId();
         this.criacoes = new CriacoesVendedor();
         this.pesquisas = new PesquisasVendedor();
         this.atualizacoes = new AtualizacoesVendedor();
-        this.remocoes = new Remocoes();
+        this.remocoes = new RemocoesVendedor();
     }
 
     /* Métodos de pesquisa */

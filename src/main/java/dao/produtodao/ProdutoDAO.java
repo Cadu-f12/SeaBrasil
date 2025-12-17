@@ -4,9 +4,11 @@ import dao.ValidacaoId;
 import dao.operacoes.Atualizacoes;
 import dao.operacoes.Criacoes;
 import dao.operacoes.Pesquisas;
+import dao.operacoes.Remocoes;
 import dao.operacoes.produto.AtualizacoesProduto;
 import dao.operacoes.produto.CriacoesProduto;
 import dao.operacoes.produto.PesquisasProduto;
+import dao.operacoes.produto.RemocoesProduto;
 import model.produto.Produto;
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class ProdutoDAO {
     private final Criacoes<Produto> criacoes;
     private final Pesquisas<Produto> pesquisas;
     private final Atualizacoes<Produto> atualizacoes;
-    private final Remocoes remocoes;
+    private final Remocoes<Produto> remocoes;
 
 
     public ProdutoDAO() {
@@ -25,7 +27,7 @@ public class ProdutoDAO {
         this.criacoes = new CriacoesProduto();
         this.pesquisas = new PesquisasProduto();
         this.atualizacoes = new AtualizacoesProduto();
-        this.remocoes = new Remocoes();
+        this.remocoes = new RemocoesProduto();
     }
 
     /* Métodos de pesquisa */

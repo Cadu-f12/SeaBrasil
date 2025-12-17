@@ -1,13 +1,15 @@
-package dao.produtodao;
+package dao.operacoes.produto;
 
+import dao.operacoes.Remocoes;
 import model.produto.Produto;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Remocoes {
+public class RemocoesProduto implements Remocoes<Produto> {
 
+    @Override
     public void deletarId(Produto produto){
         String sql = "DELETE FROM produto WHERE id = ?";
 
