@@ -22,14 +22,14 @@ public class VendedorDAO {
     }
 
     /* Métodos de pesquisa */
-    public Vendedor pesquisarId(Vendedor vendedorApenasId) {
-        boolean b = validacaoId.existeIdVendedor(vendedorApenasId.getVendedorId());
+    public Vendedor pesquisarId(Vendedor vendedorApenasComId) {
+        boolean b = validacaoId.existeIdVendedor(vendedorApenasComId.getVendedorId());
         if (!b) {
             System.err.println("Exceção disparada de: VendedorDAO.pesquisarId");
             throw new NoSuchElementException("id_vendedor inválido: id não encontrado no sistema");
         }
 
-        return pesquisas.lerId(vendedorApenasId);
+        return pesquisas.lerId(vendedorApenasComId);
     }
     public ArrayList<Vendedor> listar() {
         return pesquisas.listar();
@@ -46,7 +46,7 @@ public class VendedorDAO {
         criacoes.criarId(vendedorComId);
     }
     public void registrarNome(Vendedor vendedorComNome) {
-        System.err.println("Exceção disparada de: VendedorDAO.registrarNome");
+
         criacoes.criarNome(vendedorComNome);
     }
 

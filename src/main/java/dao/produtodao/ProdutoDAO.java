@@ -27,7 +27,7 @@ public class ProdutoDAO {
         boolean b = validacaoId.existeIdProduto(produtoComId.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: ProdutoDAO.pesquisarId");
-            throw new NoSuchElementException("id_produto inválido: não existente no sistema");
+            throw new NoSuchElementException("id_produto inválido: id não encontrado no sistema");
         }
 
         return pesquisas.lerId(produtoComId);
@@ -40,7 +40,7 @@ public class ProdutoDAO {
     public void registrarId(Produto produtoComId) {
         boolean b = validacaoId.existeIdProduto(produtoComId.getProdutoId());
         if (b) {
-            System.err.println("Exceção disparada de: ProdutoDAO.criarComId");
+            System.err.println("Exceção disparada de: ProdutoDAO.registrarId");
             throw new NoSuchElementException("id_produto inválido: já existente no sistema");
         }
 
@@ -62,14 +62,13 @@ public class ProdutoDAO {
     }
 
     /* Métodos de remoção */
-    public void removerId(Produto produto) {
-        boolean b = validacaoId.existeIdProduto(produto.getProdutoId());
+    public void removerId(Produto produtoApenasId) {
+        boolean b = validacaoId.existeIdProduto(produtoApenasId.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: ProdutoDAO.removerId");
-            throw new NoSuchElementException("id_produto inválido: não existente no sistema");
+            throw new NoSuchElementException("id_produto inválido: id não encontrado no sistema");
         }
 
-        remocoes.deletarId(produto);
+        remocoes.deletarId(produtoApenasId);
     }
-
 }

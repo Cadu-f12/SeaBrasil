@@ -26,7 +26,7 @@ public class VendaDAO {
         boolean b = validacaoId.existeIdVenda(vendaApenasComId.getProdutoId());
         if (!b) {
             System.err.println("Exceção disparada de: VendaDAO.pesquisarId");
-            throw new NoSuchElementException("id_venda inválido: não existente no sistema");
+            throw new NoSuchElementException("id_venda inválido: id não encontrado no sistema");
         }
 
         return pesquisas.lerId(vendaApenasComId);
@@ -36,18 +36,18 @@ public class VendaDAO {
     }
 
     /* Métodos de criação */
-    public void resgistrarId(Venda venda) {
-        boolean b = validacaoId.existeIdVenda(venda.getVendaId());
+    public void resgistrarId(Venda vendaComId) {
+        boolean b = validacaoId.existeIdVenda(vendaComId.getVendaId());
         if (b) {
             System.err.println("Exceção disparada de: VendaDAO.registrarId");
             throw new NoSuchElementException("id_venda inválido: já existente no sistema");
         }
 
-        criacoes.addVendaComId(venda);
+        criacoes.addVendaComId(vendaComId);
     }
-    public void registrarNome(Venda venda) {
+    public void registrarNome(Venda vendaComNome) {
 
-        criacoes.addVendaComNome(venda);
+        criacoes.addVendaComNome(vendaComNome);
     }
 
     /* Métodos de atualização */
@@ -55,20 +55,20 @@ public class VendaDAO {
         boolean b = validacaoId.existeIdVenda(novaVenda.getVendaId());
         if (!b) {
             System.err.println("Exceção disparada de: VendaDAO.substituir");
-            throw new NoSuchElementException("id_venda inválido: já existente no sistema");
+            throw new NoSuchElementException("id_venda inválido: id não encontrado no sistema");
         }
 
         atualizacoes.atualizar(novaVenda);
     }
 
     /* Métodos de remoção */
-    public void removerId(Venda venda) {
-        boolean b = validacaoId.existeIdVenda(venda.getVendaId());
+    public void removerId(Venda vendaApenasId) {
+        boolean b = validacaoId.existeIdVenda(vendaApenasId.getVendaId());
         if (!b) {
             System.err.println("Exceção disparada de: VendaDAO.removerId");
             throw new NoSuchElementException("id_venda inválido: já existente no sistema");
         }
 
-        remocoes.deletarId(venda);
+        remocoes.deletarId(vendaApenasId);
     }
 }
