@@ -1,6 +1,6 @@
-package dao.operacoes.vendedor;
+package dao.vendedor;
 
-import dao.operacoes.Atualizacoes;
+import dao.Atualizacoes;
 import model.vendedor.Vendedor;
 import util.Conexao;
 

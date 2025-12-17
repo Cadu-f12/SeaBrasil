@@ -1,13 +1,10 @@
-package dao;
+package dao.vendedor;
 
-import dao.operacoes.Atualizacoes;
-import dao.operacoes.Criacoes;
-import dao.operacoes.Pesquisas;
-import dao.operacoes.Remocoes;
-import dao.operacoes.vendedor.AtualizacoesVendedor;
-import dao.operacoes.vendedor.CriacoesVendedor;
-import dao.operacoes.vendedor.PesquisasVendedor;
-import dao.operacoes.vendedor.RemocoesVendedor;
+import dao.ValidacaoId;
+import dao.Atualizacoes;
+import dao.Criacoes;
+import dao.Pesquisas;
+import dao.Remocoes;
 import model.vendedor.Vendedor;
 
 import java.util.ArrayList;

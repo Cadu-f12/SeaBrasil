@@ -1,6 +1,6 @@
-package dao.operacoes.produto;
+package dao.produto;
 
-import dao.operacoes.Pesquisas;
+import dao.Pesquisas;
 import model.Id;
 import model.produto.*;
 import util.Conexao;

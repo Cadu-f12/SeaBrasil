@@ -1,6 +1,6 @@
-package dao.operacoes.vendedor;
+package dao.vendedor;
 
-import dao.operacoes.Remocoes;
+import dao.Remocoes;
 import model.vendedor.Vendedor;
 import util.Conexao;
 

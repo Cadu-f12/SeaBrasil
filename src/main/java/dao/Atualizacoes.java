@@ -1,4 +1,4 @@
-package dao.operacoes;
+package dao;
 
 public interface Atualizacoes<T> {
 

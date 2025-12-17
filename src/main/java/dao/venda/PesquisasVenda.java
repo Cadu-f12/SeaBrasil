@@ -1,8 +1,8 @@
-package dao.operacoes.venda;
+package dao.venda;
 
-import dao.operacoes.Pesquisas;
-import dao.ProdutoDAO;
-import dao.VendedorDAO;
+import dao.Pesquisas;
+import dao.produto.ProdutoDAO;
+import dao.vendedor.VendedorDAO;
 import model.Id;
 import model.produto.Produto;
 import model.venda.*;

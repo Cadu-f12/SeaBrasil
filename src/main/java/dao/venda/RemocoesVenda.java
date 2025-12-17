@@ -1,6 +1,6 @@
-package dao.operacoes.venda;
+package dao.venda;
 
-import dao.operacoes.Remocoes;
+import dao.Remocoes;
 import model.venda.Venda;
 import util.Conexao;
 

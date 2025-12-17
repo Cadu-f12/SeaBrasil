@@ -1,6 +1,6 @@
-package dao.operacoes.vendedor;
+package dao.vendedor;
 
-import dao.operacoes.Pesquisas;
+import dao.Pesquisas;
 import model.Id;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;

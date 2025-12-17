@@ -1,13 +1,10 @@
-package dao;
+package dao.produto;
 
-import dao.operacoes.Atualizacoes;
-import dao.operacoes.Criacoes;
-import dao.operacoes.Pesquisas;
-import dao.operacoes.Remocoes;
-import dao.operacoes.produto.AtualizacoesProduto;
-import dao.operacoes.produto.CriacoesProduto;
-import dao.operacoes.produto.PesquisasProduto;
-import dao.operacoes.produto.RemocoesProduto;
+import dao.ValidacaoId;
+import dao.Atualizacoes;
+import dao.Criacoes;
+import dao.Pesquisas;
+import dao.Remocoes;
 import model.produto.Produto;
 
 import java.util.ArrayList;

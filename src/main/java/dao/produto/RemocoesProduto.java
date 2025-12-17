@@ -1,6 +1,6 @@
-package dao.operacoes.produto;
+package dao.produto;
 
-import dao.operacoes.Remocoes;
+import dao.Remocoes;
 import model.produto.Produto;
 import util.Conexao;
 
