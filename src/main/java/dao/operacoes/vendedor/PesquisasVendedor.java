@@ -1,5 +1,6 @@
-package dao.vendedordao;
+package dao.operacoes.vendedor;
 
+import dao.operacoes.Pesquisas;
 import model.Id;
 import model.vendedor.Vendedor;
 import model.vendedor.VendedorInfo;
@@ -11,9 +12,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Pesquisas {
+public class PesquisasVendedor implements Pesquisas<Vendedor> {
 
-    protected Vendedor lerId(Vendedor vendedorApenasComId) {
+    @Override
+    public Vendedor lerId(Vendedor vendedorApenasComId) {
         String sql = "SELECT * FROM vendedor WHERE id = ?";
         Vendedor novoVendedor = null;
 
@@ -35,7 +37,8 @@ public class Pesquisas {
         }
     }
 
-    protected ArrayList<Vendedor> listar() {
+    @Override
+    public ArrayList<Vendedor> listar() {
         String sql = "SELECT * FROM vendedor";
         ArrayList<Vendedor> vendedores = new ArrayList<>();
 

@@ -1,5 +1,6 @@
-package dao.vendadao;
+package dao.operacoes.venda;
 
+import dao.operacoes.Pesquisas;
 import dao.produtodao.ProdutoDAO;
 import dao.vendedordao.VendedorDAO;
 import model.Id;
@@ -14,8 +15,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Pesquisas {
+public class PesquisasVenda implements Pesquisas<Venda> {
 
+    @Override
     public Venda lerId(Venda vendaApenasComId) {
         String sql = "SELECT * FROM produto WHERE id = ?";
         Venda venda = null;
@@ -42,6 +44,7 @@ public class Pesquisas {
         }
     }
 
+    @Override
     public ArrayList<Venda> listar() {
         String sql = "SELECT * FROM venda";
         ArrayList<Venda> vendas = new ArrayList<>();
@@ -77,7 +80,5 @@ public class Pesquisas {
         Produto produto = new Produto(new Id(id), null);
         return produtoDAO.pesquisarId(produto);
     }
-
-
 
 }
