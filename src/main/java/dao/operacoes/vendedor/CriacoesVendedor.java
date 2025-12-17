@@ -1,14 +1,15 @@
-package dao.vendedordao;
+package dao.operacoes.vendedor;
 
+import dao.operacoes.Criacoes;
 import model.vendedor.Vendedor;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Criacoes {
-
-    protected void criarId(Vendedor vendedorComTudo) {
+public class CriacoesVendedor implements Criacoes<Vendedor> {
+    @Override
+    public void criarId(Vendedor vendedorComTudo) {
         String sql = "INSERT INTO vendedor (id, nome, telefone) VALUES (?, ?, ?)";
 
         try (Connection conn = Conexao.getConnection();
@@ -23,7 +24,8 @@ public class Criacoes {
         }
     }
 
-    protected void criarNome(Vendedor vendedorComNome) {
+    @Override
+    public void criarNome(Vendedor vendedorComNome) {
         String sql = "INSERT INTO vendedor (nome, telefone) VALUES (?, ?)";
 
         try (Connection conn = Conexao.getConnection();

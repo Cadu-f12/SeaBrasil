@@ -1,13 +1,14 @@
-package dao.produtodao;
+package dao.operacoes.produto;
 
+import dao.operacoes.Criacoes;
 import model.produto.Produto;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Criacoes {
-
+public class CriacoesProduto implements Criacoes<Produto> {
+    @Override
     public void criarId(Produto produtoComId) {
         String sql = "INSERT INTO produto (id, categoria, nome, preco) VALUES (?, ?, ?, ?)";
 
@@ -24,6 +25,7 @@ public class Criacoes {
         }
     }
 
+    @Override
     public void criarNome(Produto produtoComNome) {
         String sql = "INSERT INTO produto (categoria, nome, preco) VALUES (?, ?, ?)";
 

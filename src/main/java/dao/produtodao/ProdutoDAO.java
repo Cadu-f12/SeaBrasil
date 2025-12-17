@@ -1,6 +1,8 @@
 package dao.produtodao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Criacoes;
+import dao.operacoes.produto.CriacoesProduto;
 import model.produto.Produto;
 
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.NoSuchElementException;
 
 public class ProdutoDAO {
     ValidacaoId validacaoId;
-    Criacoes criacoes;
+    Criacoes<Produto> criacoes;
     Pesquisas pesquisas;
     Atualizacoes atualizacoes;
     Remocoes remocoes;
@@ -16,7 +18,7 @@ public class ProdutoDAO {
 
     public ProdutoDAO() {
         this.validacaoId = new ValidacaoId();
-        this.criacoes = new Criacoes();
+        this.criacoes = new CriacoesProduto();
         this.pesquisas = new Pesquisas();
         this.atualizacoes = new Atualizacoes();
         this.remocoes = new Remocoes();

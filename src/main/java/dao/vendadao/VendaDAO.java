@@ -1,6 +1,8 @@
 package dao.vendadao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Criacoes;
+import dao.operacoes.venda.CriacoesVenda;
 import model.venda.Venda;
 
 import java.util.ArrayList;
@@ -8,14 +10,14 @@ import java.util.NoSuchElementException;
 
 public class VendaDAO {
     ValidacaoId validacaoId;
-    Criacoes criacoes;
+    Criacoes<Venda> criacoes;
     Pesquisas pesquisas;
     Atualizacoes atualizacoes;
     Remocoes remocoes;
 
     public VendaDAO() {
         this.validacaoId = new ValidacaoId();
-        this.criacoes = new Criacoes();
+        this.criacoes = new CriacoesVenda();
         this.pesquisas = new Pesquisas();
         this.atualizacoes = new Atualizacoes();
         this.remocoes = new Remocoes();
@@ -43,11 +45,11 @@ public class VendaDAO {
             throw new NoSuchElementException("id_venda inválido: já existente no sistema");
         }
 
-        criacoes.addVendaComId(vendaComId);
+        criacoes.criarId(vendaComId);
     }
     public void registrarNome(Venda vendaComNome) {
 
-        criacoes.addVendaComNome(vendaComNome);
+        criacoes.criarNome(vendaComNome);
     }
 
     /* Métodos de atualização */

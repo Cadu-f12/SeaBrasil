@@ -1,14 +1,15 @@
-package dao.vendadao;
+package dao.operacoes.venda;
 
+import dao.operacoes.Criacoes;
 import model.venda.Venda;
 import util.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class Criacoes {
-
-    public void addVendaComId(Venda venda) {
+public class CriacoesVenda implements Criacoes<Venda> {
+    @Override
+    public void criarId(Venda venda) {
         String sql  = """
                     INSERT INTO venda (id, idvendedor, idproduto, formadepagamento, data, quantidade, total)
                     VALUES (?, ?, ?, ?, ?, ?, ?);
@@ -30,7 +31,8 @@ public class Criacoes {
         }
     }
 
-    public void addVendaComNome(Venda venda) {
+    @Override
+    public void criarNome(Venda venda) {
         String sql  = """
                     INSERT INTO venda (idvendedor, idproduto, formadepagamento, data, quantidade, total)
                     VALUES (?, ?, ?, ?, ?, ?);

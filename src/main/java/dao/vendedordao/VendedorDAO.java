@@ -1,6 +1,8 @@
 package dao.vendedordao;
 
 import dao.ValidacaoId;
+import dao.operacoes.Criacoes;
+import dao.operacoes.vendedor.CriacoesVendedor;
 import model.vendedor.Vendedor;
 
 import java.util.ArrayList;
@@ -8,14 +10,14 @@ import java.util.NoSuchElementException;
 
 public class VendedorDAO {
     private final ValidacaoId validacaoId;
-    private final Criacoes criacoes;
+    private final Criacoes<Vendedor> criacoes;
     private final Pesquisas pesquisas;
     private final Atualizacoes atualizacoes;
     private final Remocoes remocoes;
 
     public VendedorDAO() {
         this.validacaoId = new ValidacaoId();
-        this.criacoes = new Criacoes();
+        this.criacoes = new CriacoesVendedor();
         this.pesquisas = new Pesquisas();
         this.atualizacoes = new Atualizacoes();
         this.remocoes = new Remocoes();
