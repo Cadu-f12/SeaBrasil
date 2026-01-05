@@ -12,7 +12,7 @@ No momento, a continuidade do projeto sem esses conhecimentos comprometeria a qu
 
 Como alternativa, foi criado um projeto derivado do SeaBrasil, considerado uma versão mais simples e reduzida, funcionando como um verdadeiro “filho” do projeto principal:
 
-## 👉 Registro de Vendas Simples
+## 👉 **[Registro de Vendas Simples](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO)**
 
 Este projeto tem como objetivos principais:
 
@@ -29,6 +29,7 @@ Este projeto tem como objetivos principais:
 📌 Recomendação:
 Qualquer pessoa interessada no conceito do SeaBrasil deve priorizar o acesso e acompanhamento do projeto Registro de Vendas Simples, que está em desenvolvimento ativo.
 
+---
 
 # Sobre o projeto:
 
