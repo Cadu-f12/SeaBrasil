@@ -12,7 +12,7 @@ No momento, a continuidade do projeto sem esses conhecimentos comprometeria a qu
 
 Como alternativa, foi criado um projeto derivado do SeaBrasil, considerado uma versão mais simples e reduzida, funcionando como um verdadeiro “filho” do projeto principal:
 
-## 👉 **[Registro de Vendas Simples](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO)**
+## 👉 **[Registro de Vendas Simples](https://github.com/Cadu-f12/Registro-de-vendas-simples)**
 
 Este projeto tem como objetivos principais:
 
